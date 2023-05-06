@@ -26,21 +26,27 @@ a: function (data){
 data.pokemon.forEach((i,idx) => {
     containerCard.innerHTML += ` 
     <div class="card">
-        <h2>${i.name}</h2>
-        <p>descripcion</p>
-        <button id="${idx}" class="btnshow">Click me</button>
+      <div class="card-content">
+        <p>${i.num}</p>
+        <h3>${i.name}</h3>
+        <div class="power">
+
+        </div>
+      </div>
+      <div class="card-img">
+        <img src="${i.img}" class="imagen" alt=""> 
+      </div>
     </div>`;
       
 });
 
-const btnshow = document.querySelectorAll(".btnshow");
-console.log(btnshow)
-btnshow.forEach(btn => {
-    btn.addEventListener("click", (e) =>{
+/*const imagen = document.querySelectorAll(".imagen");
+console.log(imagen)
+btnshow.forEach(imgenes => {
+    imagenes.addEventListener("click", (e) =>{
         
-        console.log(data.pokemon[e.target.id])
+        console.log(data.pokemon[e.target.src])
     });
-    
-});
+    */
 
 /*console.log(data.pokemon[0]);*/

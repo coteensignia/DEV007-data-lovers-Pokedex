@@ -20,21 +20,27 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+ 
   background-image: url(./img/container_bg.png),
     linear-gradient(1deg, #cd9900 0%, #ffe520 100%);
 }
 
-.container-card {
+.containerCard {
   padding: 30px;
   width: 1250px;
-  height: 1000px;
+  height: 100%;
   border: 30px solid;
   background-color: #fff;
   border-color: #4052d9;
   border-radius: 20px 20px 0px 0px;
   margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  
+  
 }
+
 
 footer {
   width: 100%;
@@ -73,7 +79,8 @@ footer {
   background-color: rgb(236, 235, 235);
   box-shadow: 0px 10px 10px -6px rgb(173, 173, 173);
   word-wrap: break-word;
-  margin: 20px;
+  margin: 10px;
+  height: 130px;
 }
 
 .card-img {
@@ -81,7 +88,10 @@ footer {
   width: 200px;
   height: 130px;
   background-color: cornflowerblue;
+  
 }
+
+
 
 .card-content {
   display: flex;
