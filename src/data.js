@@ -4,20 +4,23 @@ export const example = () => {
   return 'example';
 };
 
+
+
+
 export const anotherExample = () => {
   return 'OMG';
-};*/
+};
 
-/*import data from './data/pokemon/pokemon.js';
-console.log(data);
 
-filterData: function  (data, conditon){
 
-  const data = pokemon.name(data);
-  pokemon.forEach(element => {
+export const pruebaCote = () => {
+  fetch ("./data/pokemon/pokemon.json")
+  .then((response) => response.json())
+  .then((json) => {
+    console.log( "json")
+  })
     
-  });
 
-}*/
 
+};
 
