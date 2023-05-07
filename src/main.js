@@ -9,6 +9,11 @@ import data from './data/pokemon/pokemon.js';
 //recorrerlo con un for o foreach para obtener numero,nombre, imagen y tipo
     
 const containerCard = document.querySelector(".containerCard");
+/*const card = document.querySelectorAll(".card");*/
+const infoCard = document.getElementById("infoCard");
+
+/*apaga modal*/
+infoCard.style.display = "none";
 
 /*
 a: function (data){
@@ -24,20 +29,28 @@ a: function (data){
         
     }*/
 data.pokemon.forEach((i,idx) => {
+  /*m: function (idx) { 
+    const n = idx.toString()};
+    
+  console.log(m);*/
     containerCard.innerHTML += ` 
-    <div class="card">
+    <button class="card">
       <div class="card-content">
-        <p>${i.num}</p>
+        <p class="numberPokemon" >${i.num}</p>
         <h3>${i.name}</h3>
         <div class="power">
-
+        ${i.type}
         </div>
       </div>
       <div class="card-img">
         <img src="${i.img}" class="imagen" alt=""> 
       </div>
-    </div>`;
+    </button>`;
       
+   
+   // if (type == "grass"){ power.innerHTML = `https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.clipartmax.com%2Fmiddle%2Fm2i8m2Z5K9N4N4G6_grass-medallion-by-zekrom-9-pokemon-tipo-erva-logo%2F&psig=AOvVaw0gvP4NXMC_7VFxxvrL9CbI&ust=1683563110765000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJDJ0rvP4_4CFQAAAAAdAAAAABAJ`;
+  
+   // }
 });
 
 /*const imagen = document.querySelectorAll(".imagen");
