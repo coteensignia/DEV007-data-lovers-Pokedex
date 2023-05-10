@@ -26,7 +26,7 @@ body {
 }
 
 .containerCard {
-  padding: 30px;
+  padding: 20px;
   width: 1250px;
   height: 100%;
   border: 30px solid;
@@ -36,7 +36,8 @@ body {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  justify-content: space-around;
+  row-gap: 10px;
 }
 
 footer {
@@ -70,7 +71,7 @@ footer {
 .card {
   display: flex;
   justify-content: space-between;
-  border-radius: 30px;
+  border-radius: 15px;
   width: 350px;
   height: auto;
   background-color: rgb(236, 235, 235);
@@ -78,7 +79,14 @@ footer {
   word-wrap: break-word;
   margin: 10px;
   height: 130px;
+  transition: 0.2s;
+  border-style: none;
+  
 }
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 2rem rgba(0 0 0 / .3);
+  }
 
 .card-img {
   border-radius: 0px 30px 30px 0px;
@@ -99,6 +107,7 @@ footer {
   padding-top: 15px;
   border-radius: 30px 0px 0px 30px;
 }
+
 .numberPokemon{
   text-align: left;
 }
@@ -108,7 +117,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgb(189, 189, 189);
+  gap: 15px;
   width: auto;
   height: 50px;
   word-wrap: break-word;
@@ -125,7 +134,7 @@ h3 {
 /*Ventana modal*/
 .infoCard{
   position: fixed;
-  display: flex;
+  display: none;
   align-items: center;
   background-color: #fff;
   left:50%;
@@ -141,6 +150,10 @@ h3 {
 p {
   color: #6d6d6d;
   font-weight: bold;
+}
+.background-opacity{
+  opacity: 0.7;
+  
 }
 
 /*media query tablet */
