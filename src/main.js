@@ -15,6 +15,18 @@ function getTypePokemon(types) {
   return img;
 }
 
+document.addEventListener("keyup", e => {
+  if(e.target.matches(".search")){
+   
+     document.querySelectorAll(".card").forEach(nombre =>{
+     nombre.textContent.toLowerCase().includes(e.target.value) // incluye el valor 
+     ?nombre.classList.remove()          //remueve elementos del dom 
+     :nombre.classList.add("filtro")
+   });
+   if(e.key === "Escape")e.target.value = "";
+ }
+   
+ });
 /*apaga modal*/
 infoCard.style.display = "none";
 
@@ -56,8 +68,8 @@ function change(page) {
     let typePokemon = getTypePokemon(pokemon_unit.type);
 
     containerCard.innerHTML += ` 
-      <div class="card-pokemon"> 
-        <button class="card" id="${Math.abs(pokemon_unit.num)-1}">  
+      <div class="card-pokemon" id="${Math.abs(pokemon_unit.num)-1}"> 
+        <button class="card">  
           <div class="card-content">
             <p class="numberPokemon" >${pokemon_unit.num}</p>
             <h3>${pokemon_unit.name}</h3>
@@ -147,21 +159,9 @@ function openModal(idPokemon) {
 
 
 
-document.addEventListener("keyup", e => {
- if(e.target.matches(".search")){
-  
-    document.querySelectorAll(".card").forEach(nombre =>{
-    nombre.textContent.toLowerCase().includes(e.target.value) // incluye el valor 
-    ?nombre.classList.remove()          //remueve elementos del dom 
-    :nombre.classList.add("filtro")
-  });
-  if(e.key === "Escape")e.target.value = "";
-}
-  
-});
 
 
-/*
+
 const buttonType = document.getElementById("buttomType");
 const listType = document.getElementById("listType");
 
@@ -175,27 +175,11 @@ buttonType.addEventListener("click", ()=>{
 listType.addEventListener("click",(e)=>{
 const classListType = e.target.classList[0];
 switch (classListType) {
-case ('water'):  containerCard.innerHTML += ` 
-<div id="card-pokemon>
-    <button class="card" id="${Math.abs(pokemon_unit.num)-1}">
-      <div class="card-content">
-        <p class="numberPokemon" >${pokemon_unit.num}</p>
-        <h3>${pokemon_unit.name}</h3>
-        <div class="power">
-        ${typePokemon}
-        </div>
-      </div>
-      <div class="card-img">
-        <img src="${pokemon_unit.img}" class="imagen" alt=""> 
-      </div>
-    </button>
-  </div>`;
-})
-  
-
-    break;
+case ('water'):  console.log('hola')
+break;
 
   default:
     break;
 }
-});*/
+})
+    

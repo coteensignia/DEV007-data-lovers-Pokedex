@@ -47,6 +47,10 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: larger;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  margin-top: 500px;
   
 }
 
@@ -221,7 +225,7 @@ p {
 .paginado{
   display: flex;
   margin: 50px;
-    
+  
 }
 span{
   font-size: 50px;
