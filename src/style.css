@@ -20,7 +20,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-image: url(./img/container_bg.png),
     linear-gradient(1deg, #cd9900 0%, #ffe520 100%);
 }
@@ -33,7 +32,6 @@ body {
   background-color: #fff;
   border-color: #4052d9;
   border-radius: 20px 20px 0px 0px;
-  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -48,6 +46,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: larger;
+  
 }
 
 .logo {
@@ -165,7 +165,7 @@ p {
     border: 20px solid;
     background-color: #fff;
     border-color: #4052d9;
-    margin-top: 50px;
+    
   }
 
   .card {
@@ -193,6 +193,7 @@ p {
     margin-top: 50px;
     padding: 10px;
   }
+  
 
   .card {
     width: 280px;
@@ -216,5 +217,97 @@ p {
     justify-content: center;
     align-items: center;
   }
+}
+.paginado{
+  display: flex;
+  margin: 50px;
+    
+}
+span{
+  font-size: 50px;
+  font-weight: 500;
+  color:#4052d9;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: center;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+a{
+  text-decoration: none;
+  font-size: larger;
+}
+svg:hover{
+  transform: scale(1.3);
+}
+.filtro{
+  display: none;
+}
+
+/*Barra de navegación*/
+nav{
+  margin-top: 50px;
+  width: 50%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #4052d9;
+  border-start-start-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+}
+.position{
+  width: 200px;
+  text-align: center;
   
 }
+.buttom-list{
+  width: 100px;
+  height: 50px;
+  background-color: #ffe520;
+  border-radius: 5px;
+  font-size: larger;
+  
+  
+  
+}
+
+.list-type{
+  display: none;
+  position: absolute; 
+  
+ 
+}
+
+li{
+  display: flex;
+  width: 150px;
+  height: 30px;
+  background-color: #4052d9;
+  list-style-type: none;
+  justify-content: left;
+  text-align: center;
+  text-decoration: none;
+  padding: 30px;
+  margin: 0px;
+  
+}
+a{
+  color: #fff;
+  font-size: larger;
+  font-weight: 700;
+ 
+}
+li:hover{
+  background-color: #d93e30;
+  transition: 0.2s;
+
+}
+
+
+ 
