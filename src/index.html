@@ -1,77 +1,65 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <title>Pokedex</title>
-  <link rel="icon" type="image/jpg" href="./icon/pokeball.ico"/>
-  <link rel="stylesheet" href="style.css" />
- 
-</head>
-<div id="root"></div>
-<header id="upperDoc">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+    <link rel="icon" type="image/jpg" href="./icon/pokeball.ico"/>
+    <link rel="stylesheet" href="style.css" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- para tomar el media -->
-  <div class="logo"></div>
-  <input class="search" id="buscar" type="text" placeholder="Search by name">
-</header>
+  </head>
+  <div id="root"></div>
+  <header id="upperDoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- para tomar el media -->
+    <div class="logo"></div>
+    <input class="search" id="buscar" type="text" placeholder="Search by name">
+  </header>
+  
+  <body>
 
-<body>
-  <nav>
-    <div class="position">
+    <!-- botones filtrado y mostrar todo  -->
+    <nav>
+      <div class="position">
         <button class="buttom-list" id="buttomType">Type</button>
-        <ul class="list-type" id="listType">
-          <li class="water">Water</li>
-          <li class="dragon">Dragon</li>
-          <li class="fire">Fire</li>
-          <li class="electric">Electric</li>
-          <li class="fairy">Fairy</li>
-          <li class="ghost">Ghost</li>
-          <li class="ice">Ice</li>
-          <li class="normal">Normal</li>
-          <li class="grass">Grass</li>
-          <li class="fighting">Fighting</li>
-          <li class="bug">Bug</li>
-          <li class="poison">Poison</li>
-          <li class="ground">Ground</li>
-          <li class="flying">Flying</li>
-          <li class="psychic">Psychic</li>
-          <li class="rock">Rock</li>
-          <li class="dark">Dark</li>
-          <li class="ground">Ground</li>
-          <li class="steel">Steel</li>
+      </div>
+      <div class="position">
+        <button class="buttom-list" id="buttomOrder">Todos</button>
+        <ul class="list" id="listOrder">
         </ul>
+      </div>
+    </nav>
+  
+    <!-- contenedor  -->
+    <div class="containerCard" id="containerCard"></div>
+
+
+    <!-- -botones paginación  -->
+    <div class="paginado">
+      <!-- previon -->
+      <div id="btn_prev">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M15 6l-6 6l6 6" />
+        </svg>
+      </div>      
+      <!-- numero -->
+      <span id="page"></span>
+      <!-- siguiente -->
+      <div id="btn_next">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M9 6l6 6l-6 6" />
+        </svg>
+      </div>
+      
     </div>
-    <div class="position">
-          <button class="buttom-list" id="buttomOrder">Order</button>
-         <ul class="list" id="listOrder">
-           <!-- <li><a href="">Max-CP</a></li>
-            <li><a href="">Max-HP</a></li>-->
-          </ul>
-    </div>
- </nav> 
-  <div class="containerCard" id="containerCard">
-  </div>
   
-  <div class="infoCard" id="infoCard">
-  </div>
 
-  <div class="paginado">
-  <a href="javascript:prevPage()" id="btn_prev"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M15 6l-6 6l6 6" />
-  </svg></a>&nbsp;
-  <span id="page"></span>
-  <a href="javascript:nextPage()" id="btn_next"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M9 6l6 6l-6 6" />
-  </svg></a><br>
+    <footer>
+      Diseñado por: <span class="brand">Ori y Cote</span>
+    </footer>
   
-  </div>
-
+    <script src="main.js" type="module"></script>
+    
+  </body>
   
-</body>
-<footer>Diseñado por: Ori y Cote</footer>
-
-<script src="main.js" type="module"></script>
-
-
 </html>
