@@ -34,19 +34,22 @@ let maxElemPerPage = 30;
 let elemIni = 0;
 let elemLast = maxElemPerPage-1;
 let len = data.pokemon.length;
+let page_num = 1;
 
-paginationInit(data, elemLast, containerCard, body)
-
-
+const page = document.getElementById("page");
 const btn_next = document.getElementById("btn_next");
 const btn_prev = document.getElementById("btn_prev");
 
+paginationInit(data, elemLast, page_num, page, containerCard, body)
+
+
+
 btn_next.addEventListener("click", ()=>{
-  [elemIni,elemLast]  = next(maxElemPerPage, elemIni, elemLast, len)
+  [elemIni,elemLast,page_num]  = next(maxElemPerPage, elemIni, elemLast, page_num, page, len)
 });
 
 btn_prev.addEventListener("click", ()=>{
-  [elemIni,elemLast]  = prev(maxElemPerPage, elemIni, elemLast)
+  [elemIni,elemLast,page_num]  = prev(maxElemPerPage, elemIni, elemLast, page_num, page)
 });
 
 

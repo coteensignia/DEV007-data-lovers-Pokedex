@@ -171,7 +171,7 @@ export const anotherExample = () => {
 
 
 // crear pagina (funcion)
-export function paginationInit(data, elemLast, containerCard, body ) {
+export function paginationInit(data, elemLast, page_num, page, containerCard, body ) {
 
   let out = ''
   data.pokemon.forEach((poke, idx)=>{
@@ -183,6 +183,7 @@ export function paginationInit(data, elemLast, containerCard, body ) {
   })
 
   containerCard.innerHTML = out
+  page.innerHTML = page_num
   
   // crea funciones para modales
   openCard(data.pokemon, body)
@@ -195,7 +196,7 @@ export function paginationInit(data, elemLast, containerCard, body ) {
 
 
 // boton siguiente
-export function next(maxElemPerPage, elemIni, elemLast, len) {
+export function next(maxElemPerPage, elemIni, elemLast, page_num, page, len) {
   if(elemLast<=len){
     elemIni = elemIni+maxElemPerPage
     elemLast = elemIni+maxElemPerPage-1
@@ -207,13 +208,15 @@ export function next(maxElemPerPage, elemIni, elemLast, len) {
         el.style.display = 'none'
       }
     })
+    page_num++
+    page.innerHTML = page_num
   }
-  return [elemIni, elemLast]
+  return [elemIni, elemLast, page_num]
 }
 
 
 // boton previo
-export function prev(maxElemPerPage, elemIni, elemLast) {
+export function prev(maxElemPerPage, elemIni, elemLast, page_num, page) {
   if(elemIni !== 0){
     elemIni = elemIni-maxElemPerPage
     elemLast = elemIni+maxElemPerPage-1
@@ -224,8 +227,10 @@ export function prev(maxElemPerPage, elemIni, elemLast) {
         el.style.display = 'none'
       }
     })
+    page_num--
+    page.innerHTML = page_num
   }
-  return [elemIni, elemLast]
+  return [elemIni, elemLast, page_num]
 }
 
 
