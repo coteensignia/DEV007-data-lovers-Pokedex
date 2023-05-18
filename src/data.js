@@ -19,6 +19,19 @@ export function card(i, poke) {
   return out
 }
 
+// iconos de tipo de pokemon
+function getTypePokemon(types) {
+  let img = "";
+  types.forEach(function (type) {
+    img += `<img src="./img/${type}.png" alt="${type}" widht="50px" height="50px">`;
+  });
+  return img;
+}
+
+
+
+
+
 
 // card modal
 export function openCard(data_, place) {
@@ -87,21 +100,7 @@ function cardDetails(poke) {
 
 
 
-
-// iconos de tipo de pokemon
-function getTypePokemon(types) {
-  let img = "";
-  types.forEach(function (type) {
-    img += `<img src="./img/${type}.png" alt="${type}" widht="50px" height="50px" loading="lazy">`;
-  });
-  return img;
-}
-
-
-
-
-
-//  estas funciones son de ejemplo
+//  ejemplos
 
 export const example = () => {
   return 'example';
@@ -110,40 +109,6 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
