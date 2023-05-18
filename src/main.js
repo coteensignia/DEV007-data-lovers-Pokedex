@@ -1,5 +1,5 @@
 
-//inicialización
+
 
 // important funciones para crear tarjetas "card" y crear modal "openCard"
 import { card, openCard } from './data.js';
@@ -7,7 +7,7 @@ import { card, openCard } from './data.js';
 // important datos
 import data from "./data/pokemon/pokemon.js";
 
-// crear constantes cuerpo, contenedor e input de busqueda
+// crar constantes curpo, contenedor e input de busqueda
 const body = document.querySelector("body")
 const containerCard = document.querySelector(".containerCard")
 const buscar = document.getElementById("buscar")
@@ -17,7 +17,14 @@ const buttonType = document.getElementById("buttomType");
 const buttonOrder = document.getElementById("buttomOrder");
 
 
+
+
+
+
+
+
 //impresion de cards + paginación
+
 let current_page = 1;
 const obj_per_page = 30;
 
@@ -44,7 +51,9 @@ function nextPage() {
 }
 
 
+
 // crear pagina (funcion)
+
 function change(page) {
   const btn_next = document.getElementById("btn_next");
   btn_next.addEventListener("click", nextPage);
@@ -60,6 +69,25 @@ function change(page) {
     containerCard.innerHTML +=  card(i,data.pokemon[i]);
     // crea funciones para modales
     openCard(data.pokemon, body)
+    let pokemon_unit = data.pokemon[i];
+    let typePokemon = getTypePokemon(pokemon_unit.type);
+
+    containerCard.innerHTML += ` 
+      <div class="card-pokemon" id="${Math.abs(pokemon_unit.num)-1}"> 
+        <button class="card">  
+          <div class="card-content">
+            <p class="numberPokemon" >${pokemon_unit.num}</p>
+            <h3>${pokemon_unit.name}</h3>
+            <div class="power">
+            ${typePokemon}
+            </div>
+          </div>
+          <div class="card-img">
+            <img src="${pokemon_unit.img}" class="imagen" alt=""> 
+          </div>
+        </button>
+      </div>`;
+        
   }
 
   for(let i = 0; i < containerCard.children.length; i++){
@@ -82,23 +110,70 @@ function change(page) {
 }
 
 
+
 // crear pagina (ejecucion)
 window.onload = function () {
   change(1);
 };
 
 
+
+function openModal(idPokemon) {
+  infoCard.style.display = "block";
+  console.log(idPokemon); 
+  const objPokemon = data.pokemon[idPokemon];
+  console.log(objPokemon);
+  document.getElementById("infoCard").innerHTML = `
+        <div class="mainInfo">
+          <p class="numberPokemon">${objPokemon.num}</p>
+          <p class="close"></p>
+          <h3>${objPokemon.name}</h3>
+          <img src="${objPokemon.img}" alt="">
+          <div>
+            <div class="power">${objPokemon.type}</div>
+            <h4>Sobre</h4>
+            <div>
+              <div class="weightDiv">
+                <div>            
+                  <img src="" alt="">
+                  <p class="weight"></p>
+                </div>
+                <p>Peso</p>
+              </div>
+              <div class="sizeDiv">
+                <div>            
+                  <img src="" alt="">
+                  <p class="size"></p>
+                </div>
+                <p>Medida</p>
+              </div>
+              <div class="movesDiv">
+                <p class="moves"></p>
+                <p>Moves</p>
+            </div>
+            <div class="description">
+              <p>${objPokemon.about}</p>
+            </div>
+            <div>
+              <h3>Estadística</h3>
+              <div>
+    
+              </div>
+            </div>
+          </div> `;         
+}
+
+
 // interaccion input busqueda
-    // EVALUAR SI LO Q ENTRA EN INPUT EXISTE COMO PARTE DE ALGUN NOMBRE
-    // poke.name   (el nombre en objeto)
-    // includes    (revisa si incluye en )
-    // val         (el texto q esta entrando en input)
 
 buscar.addEventListener("keydown", e => {
   const val = e.target.value.toLowerCase()
   let out = ''
   data.pokemon.forEach((poke,idx)=>{
-    
+    // EVALUAR SI LO Q ENTRA EN INPUT EXISTE COMO PARTE DE ALGUN NOMBRE
+    // poke.name   (el nombre en objeto)
+    // includes    (revisa si incluye en )
+    // val         (el texto q esta entrando en input)
     if(poke.name.includes(val)){
       out += card(idx, poke)
     }
@@ -110,34 +185,41 @@ buscar.addEventListener("keydown", e => {
 });
 
 
+/*
+const buttonType = document.getElementById("buttomType");
+const listType = document.getElementById("listType");
+
+//const iter = data.pokemon.filter(i=> type ="water")
+
+
 
 // interaccion botones filtrado
 
 buttonType.addEventListener("click", e=>{
-  // como el div q contiene el boton ----> NODO PADRE
+  // como el div q contiene el boton NODO PADRE
   const parent = e.target.parentNode
-  // insertAdjacentHTML   --->   AGREGA CONTENIDO SIN RECARGAR EL DIV a diferencia de innerHTML
+  // insertAdjacentHTML AGREGA CONTENIDO SIN RECARGAR EL DIV a diferencia de innerHTML
   parent.insertAdjacentHTML(
     'beforeend', `
     <ul class="list-type" id="listType">
-      <li class="btn-filter-type water"    poke-type="water"    >  Water     </li>
-      <li class="btn-filter-type dragon"   poke-type="dragon"   >  Dragon    </li>
-      <li class="btn-filter-type fire"     poke-type="fire"     >  Fire      </li>
-      <li class="btn-filter-type electric" poke-type="electric" >  Electric  </li>
-      <li class="btn-filter-type fairy"    poke-type="fairy"    >  Fairy     </li>
-      <li class="btn-filter-type ghost"    poke-type="ghost"    >  Ghost     </li>
-      <li class="btn-filter-type ice"      poke-type="ice"      >  Ice       </li>
-      <li class="btn-filter-type normal"   poke-type="normal"   >  Normal    </li>
-      <li class="btn-filter-type grass"    poke-type="grass"    >  Grass     </li>
-      <li class="btn-filter-type fighting" poke-type="fighting" >  Fighting  </li>
-      <li class="btn-filter-type bug"      poke-type="bug"      >  Bug       </li>
-      <li class="btn-filter-type poison"   poke-type="poison"   >  Poison    </li>
-      <li class="btn-filter-type flying"   poke-type="flying"   >  Flying    </li>
-      <li class="btn-filter-type psychic"  poke-type="psychic"  >  Psychic   </li>
-      <li class="btn-filter-type rock"     poke-type="rock"     >  Rock      </li>
-      <li class="btn-filter-type dark"     poke-type="dark"     >  Dark      </li>
-      <li class="btn-filter-type ground"   poke-type="ground"   >  Ground    </li>
-      <li class="btn-filter-type steel"    poke-type="steel"    >  Steel     </li>
+      <li class="btn-filter-type"    poke-type="water"  >  Water     </li>
+      <li class="btn-filter-type"   poke-type="dragon"   >  Dragon    </li>
+      <li class="btn-filter-type"     poke-type="fire"     >  Fire      </li>
+      <li class="btn-filter-type" poke-type="electric" >  Electric  </li>
+      <li class="btn-filter-type"    poke-type="fairy"    >  Fairy     </li>
+      <li class="btn-filter-type"    poke-type="ghost"    >  Ghost     </li>
+      <li class="btn-filter-type"      poke-type="ice"      >  Ice       </li>
+      <li class="btn-filter-type"   poke-type="normal"   >  Normal    </li>
+      <li class="btn-filter-type"    poke-type="grass"    >  Grass     </li>
+      <li class="btn-filter-type" poke-type="fighting" >  Fighting  </li>
+      <li class="btn-filter-type"      poke-type="bug"      >  Bug       </li>
+      <li class="btn-filter-type"   poke-type="poison"   >  Poison    </li>
+      <li class="btn-filter-type"   poke-type="flying"   >  Flying    </li>
+      <li class="btn-filter-type"  poke-type="psychic"  >  Psychic   </li>
+      <li class="btn-filter-type"     poke-type="rock"     >  Rock      </li>
+      <li class="btn-filter-type"     poke-type="dark"     >  Dark      </li>
+      <li class="btn-filter-type"   poke-type="ground"   >  Ground    </li>
+      <li class="btn-filter-type"    poke-type="steel"    >  Steel     </li>
     </ul>
     `
   );
@@ -199,16 +281,8 @@ buttonOrder.addEventListener("click", ()=>{
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  default:
+    break;
+}
+})
+    

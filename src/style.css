@@ -54,6 +54,11 @@ footer {
   bottom:0px;
   margin-top: 500px;
   padding: 10px;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  margin-top: 500px;
+  
 }
 
 .logo {

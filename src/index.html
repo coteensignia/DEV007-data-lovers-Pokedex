@@ -22,44 +22,33 @@
         <button class="buttom-list" id="buttomType">Type</button>
       </div>
       <div class="position">
-        <button class="buttom-list" id="buttomOrder">Todos</button>
+        <button class="buttom-list" id="buttomOrder">All</button>
         <ul class="list" id="listOrder">
         </ul>
       </div>
     </nav>
   
-    <!-- contenedor  -->
-    <div class="containerCard" id="containerCard"></div>
+  <div class="infoCard" id="infoCard">
+  </div>
+
+  <div class="paginado">
+  <a href="javascript:prevPage()" id="btn_prev"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M15 6l-6 6l6 6" />
+  </svg></a>&nbsp;
+  <span id="page"></span>
+  <a href="javascript:nextPage()" id="btn_next"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M9 6l6 6l-6 6" />
+  </svg></a><br>
+  
+  </div>
+
+  
+</body>
+<footer>Diseñado por: Ori y Cote</footer>
+
+<script src="main.js" type="module"></script>
 
 
-    <!-- -botones paginación  -->
-    <div class="paginado">
-      <!-- previon -->
-      <div id="btn_prev">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M15 6l-6 6l6 6" />
-        </svg>
-      </div>      
-      <!-- numero -->
-      <span id="page"></span>
-      <!-- siguiente -->
-      <div id="btn_next">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4052d9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M9 6l6 6l-6 6" />
-        </svg>
-      </div>
-      
-    </div>
-  
-
-    <footer>
-      Diseñado por: <span class="brand">Ori y Cote</span>
-    </footer>
-  
-    <script src="main.js" type="module"></script>
-    
-  </body>
-  
 </html>
