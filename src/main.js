@@ -2,7 +2,7 @@
 //------------------------------------ inicialización
 
 // important funciones para crear tarjetas "card" y crear modal "openCard"
-import { card, openCard, paginationInit, next, prev} from './data.js';
+import { card, openCard, paginationInit, next, prev,ordeningCp, ordeningNum} from './data.js';
 
 
 // important datos
@@ -17,6 +17,7 @@ const buscar = document.getElementById("buscar")
 // crear constantes de botones para filtrado y orden
 const buttonType = document.getElementById("buttomType");
 const buttonOrder = document.getElementById("buttomOrder");
+const buttomCp = document.getElementById("buttomCp");
 
 
 
@@ -184,7 +185,8 @@ buttonType.addEventListener("click", e=>{
 buttonOrder.addEventListener("click", ()=>{
   // crea todas las card
   let out = ''
-  data.pokemon.forEach((e_poke,idx_poke)=>{
+  const ordenNum = ordeningNum(data.pokemon)
+  ordenNum.forEach((e_poke,idx_poke)=>{
     out += card(idx_poke, e_poke)
   })
   containerCard.innerHTML = out
@@ -192,6 +194,18 @@ buttonOrder.addEventListener("click", ()=>{
   openCard(data.pokemon, body)
 });
 
+
+buttomCp.addEventListener('click', ()=>{
+  let out = ''
+  let orderCp = ordeningCp(data.pokemon)
+
+  orderCp.forEach((e_poke,idx_poke)=>{
+    out += card(idx_poke, e_poke)
+  })
+  containerCard.innerHTML = out
+  // crea funciones para modales
+  openCard(data.pokemon, body)
+});
 
 
 

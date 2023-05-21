@@ -22,6 +22,35 @@ export function card(i, poke, hide=null) {
   return out
 }
 
+export function ordeningCp(data_){
+  data_.sort((a, b) => {
+    if (a.stats["max-cp"] > b.stats["max-cp"] ) {
+      return -1;
+    }
+    if (a.stats["max-cp"] <  b.stats["max-cp"] ) {
+      return 1;
+    }
+    return 0;
+  });
+return data_
+}
+
+export function ordeningNum(data_){
+  data_.sort((a, b) => {
+    if (a.num < b.num ) {
+      return -1;
+    }
+    if (a.num  > b.num ) {
+      return 1;
+    }
+    return 0;
+  });
+return data_
+}
+
+
+
+
 
 
 
@@ -69,12 +98,12 @@ function cardDetails(poke) {
           <div class="info">${poke.size.height}</div>
         </div>
         <div class="sec">
-          <div class="title">Rarity</div>
-          <div class="info">${poke['pokemon-rarity']}</div>
+          <div class="title">ATTACK-DEFENSE</div>
+          <div class="info">${promedio(poke.stats["base-attack"],poke.stats["base-defense"])}</div>
         </div>
         <div class="sec">
-          <div class="title">Generation</div>
-          <div class="info">${poke.generation.name}</div>
+          <div class="title">CP</div>
+          <div class="info">${poke.stats["max-cp"]}</div>
         </div>
       </div>
 
@@ -89,7 +118,10 @@ function cardDetails(poke) {
   return out
 }
 
-
+//promedio
+function promedio (attack,defense){
+  return attack-defense
+}
 
 
 
