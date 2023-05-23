@@ -73,7 +73,12 @@ footer {
   text-align: right;
   padding-right: 30px;
 }
-
+.start{
+  background-image: url(./img/portada\ pokemon.jpg);
+}
+.button-start{
+  
+}
 .card {
   display: flex;
   justify-content: space-between;

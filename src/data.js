@@ -5,8 +5,8 @@ export function card(i, poke, hide=null) {
   let hideInitial = hide==='hide' ? ' style="display:none;" ': ''
 
   const out = ` 
-  <div ${hideInitial} class="card-pokemon" id="${Math.abs(poke.num)-1}"> 
-    <button pos="${i}" class="card">  
+  <div ${hideInitial} class="card-pokemon"> 
+     <button pos="${i}" class="card">  
       <div class="card-content">
         <p class="numberPokemon" >${poke.num}</p>
         <h3>${poke.name}</h3>
@@ -19,12 +19,14 @@ export function card(i, poke, hide=null) {
       </div>
     </button>
   </div>`
+  //console.log(typeof(card))
   return out
 }
 
 export function ordeningCp(data_){
   data_.sort((a, b) => {
     if (a.stats["max-cp"] > b.stats["max-cp"] ) {
+     
       return -1;
     }
     if (a.stats["max-cp"] <  b.stats["max-cp"] ) {
@@ -32,6 +34,7 @@ export function ordeningCp(data_){
     }
     return 0;
   });
+ // console.log(typeof data_)
 return data_
 }
 
@@ -99,7 +102,7 @@ function cardDetails(poke) {
         </div>
         <div class="sec">
           <div class="title">ATTACK-DEFENSE</div>
-          <div class="info">${promedio(poke.stats["base-attack"],poke.stats["base-defense"])}</div>
+          <div class="info">${calculation(poke.stats["base-attack"],poke.stats["base-defense"])}</div>
         </div>
         <div class="sec">
           <div class="title">CP</div>
@@ -118,8 +121,9 @@ function cardDetails(poke) {
   return out
 }
 
-//promedio
-function promedio (attack,defense){
+//cálculo
+function calculation (attack,defense){
+  //console.log(attack-defense)
   return attack-defense
 }
 
@@ -133,72 +137,6 @@ function getTypePokemon(types) {
   });
   return img;
 }
-
-
-
-
-
-// ------------------------------------  estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

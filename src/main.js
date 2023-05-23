@@ -22,10 +22,6 @@ const buttomCp = document.getElementById("buttomCp");
 
 
 
-
-
-
-
 //------------------------------------ impresion de cards + paginación
 
 // crear pagina (ejecucion)
@@ -147,6 +143,7 @@ buttonType.addEventListener("click", e=>{
         }
       })
 
+      
       containerCard.innerHTML = out
 
       // modal
