@@ -10,6 +10,8 @@ import data from "./data/pokemon/pokemon.js";
 
 
 // crar constantes curpo, contenedor e input de busqueda
+
+
 const body = document.querySelector("body")
 const containerCard = document.querySelector(".containerCard")
 const buscar = document.getElementById("buscar")
@@ -18,6 +20,23 @@ const buscar = document.getElementById("buscar")
 const buttonType = document.getElementById("buttomType");
 const buttonOrder = document.getElementById("buttomOrder");
 const buttomCp = document.getElementById("buttomCp");
+
+
+const startButton = document.getElementById("startButton");
+const upperDoc = document.getElementById("upperDoc");
+const nav = document.getElementById("nav");
+const paginado = document.getElementById("paginado");
+
+// ocultar segunda pagina evento
+
+startButton.addEventListener("click", () => {
+  pagStart.style.display = "none";
+  containerCard.style.display = "flex";
+  upperDoc.style.display = "flex";
+  nav.style.display = "flex";
+  paginado.style.display = "flex";
+
+});
 
 
 
