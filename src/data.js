@@ -82,16 +82,22 @@ function cardDetails(poke) {
     <div class="card-details">
       <div class="card-details-head">
         <div class="num">${poke.num}</div>
-        <div class="power">${getTypePokemon(poke.type)}</div>
+        <div class="exis"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-xbox-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#C5312A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" />
+        <path d="M9 8l6 8" />
+        <path d="M15 8l-6 8" />
+      </svg></div>
       </div>
       
       <div class="card-details-main">
         <div class="title">${poke.name}</div>
         <img class="image" src="${poke.img}" alt="" loading="lazy">
       </div>
-
+      <div class="power">${getTypePokemon(poke.type)}</div>
       <div class="card-details-about">
         <div class="title">Datos</div>
+        <br>
         <div class="sec">
           <div class="title">Weight</div>
           <div class="info">${poke.size.weight}</div>
@@ -101,17 +107,18 @@ function cardDetails(poke) {
           <div class="info">${poke.size.height}</div>
         </div>
         <div class="sec">
-          <div class="title">ATTACK-DEFENSE</div>
+          <div class="title">Att-Def</div>
           <div class="info">${calculation(poke.stats["base-attack"],poke.stats["base-defense"])}</div>
         </div>
         <div class="sec">
-          <div class="title">CP</div>
+          <div class="title">CP-Max</div>
           <div class="info">${poke.stats["max-cp"]}</div>
         </div>
       </div>
 
       <div class="card-details-description">
         <div class="title">Descripción</div>
+      
         <div class="info">${poke.about}</div>
       </div>
 
