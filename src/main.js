@@ -80,7 +80,7 @@ btn_prev.addEventListener("click", ()=>{
 
 // ------------------------------------ interaccion input busqueda
 
-buscar.addEventListener("keydown", e => {
+/*buscar.addEventListener("keydown", e => {
   const val = e.target.value.toLowerCase()
   let out = ''
   data.pokemon.forEach((poke,idx)=>{
@@ -96,9 +96,31 @@ buscar.addEventListener("keydown", e => {
 
   // crea funciones para modales
   openCard(data.pokemon, body)
+});*/
+
+
+
+buscar.addEventListener("keydown", function(){
+    const val = buscar.value.toLowerCase();
+     if(val.length > 1){
+      
+      let out = ''
+      data.pokemon.forEach((poke,idx)=>{
+        // EVALUAR SI LO Q ENTRA EN INPUT EXISTE COMO PARTE DE ALGUN NOMBRE
+        // poke.name   (el nombre en objeto)
+        // includes    (revisa si incluye en )
+        // val         (el texto q esta entrando en input)
+        if(poke.name.includes(val)){
+          out += card(idx, poke)
+        }
+      })
+      containerCard.innerHTML = out
+    
+      // crea funciones para modales
+      openCard(data.pokemon, body)
+          //Llamada ajax
+    }
 });
-
-
 
 
 

@@ -13,6 +13,7 @@ export function card(i, poke, hide=null) {
         <div class="power">
         ${getTypePokemon(poke.type)}
         </div>
+        <h2>Cp-max: ${poke.stats["max-cp"]}</h2>
       </div>
       <div class="card-img">
         <img src="${poke.img}" class="imagen" alt=""> 
@@ -111,7 +112,7 @@ function cardDetails(poke) {
           <div class="info">${calculation(poke.stats["base-attack"],poke.stats["base-defense"])}</div>
         </div>
         <div class="sec">
-          <div class="title">CP-Max</div>
+          <div class="title">Cp-max</div>
           <div class="info">${poke.stats["max-cp"]}</div>
         </div>
       </div>

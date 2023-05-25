@@ -25,6 +25,7 @@ body {
   align-items: center;
   background-image: url(./img/container_bg.png),
     linear-gradient(1deg, #cd9900 0%, #ffe520 100%);
+    background-size: cover;
 }
 
 .containerCard {
@@ -105,7 +106,7 @@ footer {
   background-color: #C5312A;
   color: white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 30px;
   font-size:20px;
   box-shadow: 0px 2px 0px 1px rgba(148,0,0,1);
 
@@ -178,6 +179,7 @@ footer {
   height: 50px;
   word-wrap: break-word;
   margin: 10px;
+ 
 }
 
 h3 {
@@ -185,7 +187,11 @@ h3 {
   font-size: 20px;
   text-transform: capitalize;
 }
-
+h2{
+  color: #4052d9;
+  font-size: 15px;
+  text-transform: capitalize;
+}
 
 
  
@@ -232,6 +238,10 @@ span{
   justify-content: center;
   align-items: center;
 
+}
+.let{
+  font-size: 25px;
+  color: black;
 }
 a{
   text-decoration: none;
