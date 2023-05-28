@@ -1,91 +1,32 @@
-import { card, ordeningCp, ordeningNum, calculation, prev, next, paginationInit, } from '../src/data.js';
+import { ordeningCp, ordeningNum, calculation } from "../src/data.js";
+import data from "../src/data/pokemon/pokemon.js";
 
-
-describe('card', () => {
-  it('is a function', () => {
-    expect(typeof card).toBe('function');
+describe("ordeningCp function", () => {
+  it("is a function", () => {
+    expect(typeof ordeningCp).toBe("function");
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
-
-
-describe('ordeningCp', () => {
-  it('is a function', () => {
-    expect(typeof ordeningCp).toBe('function');
-  });
-
-  it('debería retornar un objeto al tocar el boton cp', () => {
-    expect(ordeningCp()).toBe('object');
+  it("debería retornar un objeto al tocar el boton cp", () => {
+    expect(ordeningCp(data.pokemon)).toBe("object");
   });
 });
 
-describe('ordeningNum', () => {
-  it('is a function', () => {
-    expect(typeof ordeningNum).toBe('function');
+describe("ordeningNum", () => {
+  it("is a function", () => {
+    expect(typeof ordeningNum).toBe("function");
   });
 
-  it('debería retornar un objeto al tocar el boton All', () => {
-    expect(ordeningNum()).toBe('object');
-  });
-});
-
-describe('calculation', () => {
-  it('is a function', () => {
-    expect(typeof calculation).toBe('function');
-  });
-
-  it('debería retornar un numero)', () => {
-    expect(attack-defense).toBe('Number');
+  it("debería retornar un objeto al tocar el boton All", () => {
+    expect(ordeningNum(data.pokemon)).toEqual();
   });
 });
-265
 
-
-
-/*importamos el objeto `validator`, que contiene las funciones `isValid` y `maskify`
-import validator from '../src/validator';
-
-describe('validator', () => {
-  it('debería ser un objeto', () => {
-    expect(typeof validator).toBe('object');
+describe("calculation", () => {
+  it("is a function", () => {
+    expect(typeof calculation).toBe("function");
   });
 
-  describe('validator.isValid', () => {
-    it('debería ser una función', () => {
-      expect(typeof validator.isValid).toBe('function');
-    });
-
-    it('debería retornar true para "4083952015263"', () => {
-      expect(validator.isValid('4083952015263')).toBe(true);
-    });
-
-    it('debería retornar true para "79927398713"', () => {
-      expect(validator.isValid('79927398713')).toBe(true);
-    }); 
-
-    it('debería retornar false para "1234567890"', () => {
-      expect(validator.isValid('1234567890')).toBe(false);
-    });
+  it("debería retornar un numero)", () => {
+    expect(calculation(118, 111)).toBe(7);
   });
-
-  describe('validator.maskify', () => {
-    it('debería ser una función', () => {
-      expect(typeof validator.maskify).toBe('function');
-    });
-
-    it('Debería retornar "############5616" para "4556364607935616"', () => {
-      expect(validator.maskify('4556364607935616')).toBe('############5616');
-    });
-
-    it('Debería retornar "1" para "1"', () => {
-      expect(validator.maskify('1')).toBe('1');
-    });
-
-    it('Debería retornar "######orld" para "helloworld"', () => {
-      expect(validator.maskify('helloworld')).toBe('######orld');
-    });
-  });
-});*/
+});

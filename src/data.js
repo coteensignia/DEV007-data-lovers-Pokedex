@@ -1,8 +1,6 @@
-
 // ------------------------------------ card
-export function card(i, poke, hide=null) {
-
-  let hideInitial = hide==='hide' ? ' style="display:none;" ': ''
+export function card(i, poke, hide = null) {
+  const hideInitial = hide==="hide" ? ' style="display:none;" ' : "";
 
   const out = ` 
   <div ${hideInitial} class="card-pokemon"> 
@@ -19,66 +17,57 @@ export function card(i, poke, hide=null) {
         <img src="${poke.img}" class="imagen" alt=""> 
       </div>
     </button>
-  </div>`
+  </div>`;
   //console.log(typeof(card))
-  return out
+  return out;
 }
 
-export function ordeningCp(data_){
+export function ordeningCp(data_) {
   data_.sort((a, b) => {
-    if (a.stats["max-cp"] > b.stats["max-cp"] ) {
-     
+    if (a.stats["max-cp"] > b.stats["max-cp"]) {
       return -1;
     }
-    if (a.stats["max-cp"] <  b.stats["max-cp"] ) {
+    if (parseInt(a.stats["max-cp"]) < parseInt(b.stats["max-cp"])) {
       return 1;
     }
     return 0;
   });
- // console.log(typeof data_)
-return data_
+  return data_;
 }
 
-export function ordeningNum(data_){
+export function ordeningNum(data_) {
   data_.sort((a, b) => {
-    if (a.num < b.num ) {
+    if (a.num < b.num) {
       return -1;
     }
-    if (a.num  > b.num ) {
+    if (a.num > b.num) {
       return 1;
     }
     return 0;
   });
-return data_
+  return data_;
 }
-
-
-
-
-
-
 
 // ------------------------------------ card modal
 export function openCard(data_, place) {
-  document.querySelectorAll('.card').forEach((el)=>{
-    el.addEventListener('click', ()=>{
-      const pokeinfo = data_[el.getAttribute('pos')]
+  document.querySelectorAll(".card").forEach((el) => {
+    el.addEventListener("click", () => {
+      const pokeinfo = data_[el.getAttribute("pos")];
 
-      place.insertAdjacentHTML(
-        'beforeend', cardDetails(pokeinfo)
+      place.insertAdjacentHTML("beforeend", cardDetails(pokeinfo));
+      const cardDetailsContainer = document.querySelector(
+        ".card-details-container"
       );
-      const cardDetailsContainer = document.querySelector('.card-details-container')
-      cardDetailsContainer.addEventListener('click', ()=>{
-        cardDetailsContainer.remove()
-      })
-    })
-  })
+      cardDetailsContainer.addEventListener("click", () => {
+        cardDetailsContainer.remove();
+      });
+    });
+  });
 }
-
 
 // ------------------------------------ card modal (contenido)
 function cardDetails(poke) {
-  const out  = `
+  const out = `
   <div class="card-details-container">
     <div class="card-details">
       <div class="card-details-head">
@@ -125,92 +114,83 @@ function cardDetails(poke) {
 
     </div>
   </div>
-  `
-  return out
+  `;
+  return out;
 }
 
 //cálculo
-function calculation (attack,defense){
-  //console.log(attack-defense)
-  return attack-defense
+function calculation(attack, defense) {
+ // console.log(typeof calculation)
+  return attack - defense;
 }
-
-
 
 // ------------------------------------ iconos de tipo de pokemon
 function getTypePokemon(types) {
   let img = "";
   types.forEach(function (type) {
-    img += `<img src="./img/${type}.png" alt="${type}" widht="50px" height="50px" loading="lazy">`;
+    img += `<img src="./img/${type}.png" alt="${type}" widht="30px" height="30px" loading="lazy">`;
   });
   return img;
 }
 
-
-
 // crear pagina (funcion)
-export function paginationInit(data, elemLast, page_num, page, containerCard, body ) {
-
-  let out = ''
-  data.pokemon.forEach((poke, idx)=>{
-    if(idx<=elemLast){
-      out += card(idx, poke)
-    }else{
-      out += card(idx, poke, 'hide')
+export function paginationInit(
+  data,
+  elemLast,
+  page_num,
+  page,
+  containerCard,
+  body
+) {
+  let out = "";
+  data.pokemon.forEach((poke, idx) => {
+    if (idx <= elemLast) {
+      out += card(idx, poke);
+    } else {
+      out += card(idx, poke, "hide");
     }
-  })
+  });
 
-  containerCard.innerHTML = out
-  page.innerHTML = page_num
-  
+  containerCard.innerHTML = out;
+  page.innerHTML = page_num;
+
   // crea funciones para modales
-  openCard(data.pokemon, body)
-  
-
+  openCard(data.pokemon, body);
 }
-
-
-
-
 
 // boton siguiente
 export function next(maxElemPerPage, elemIni, elemLast, page_num, page, len) {
-  if(elemLast<=len){
-    elemIni = elemIni+maxElemPerPage
-    elemLast = elemIni+maxElemPerPage-1
+  if (elemLast <= len) {
+    elemIni = elemIni + maxElemPerPage;
+    elemLast = elemIni + maxElemPerPage - 1;
 
-    document.querySelectorAll('.card-pokemon').forEach((el,idx)=>{
-      if(idx>=elemIni && idx<=elemLast){
-        el.style.display = 'flex'
-      }else{
-        el.style.display = 'none'
+    document.querySelectorAll(".card-pokemon").forEach((el, idx) => {
+      if (idx >= elemIni && idx <= elemLast) {
+        el.style.display = "flex";
+      } else {
+        el.style.display = "none";
       }
-    })
-    page_num++
-    page.innerHTML = page_num
+    });
+    page_num++;
+    page.innerHTML = page_num;
   }
-  return [elemIni, elemLast, page_num]
+  return [elemIni, elemLast, page_num];
 }
-
 
 // boton previo
 export function prev(maxElemPerPage, elemIni, elemLast, page_num, page) {
-  if(elemIni !== 0){
-    elemIni = elemIni-maxElemPerPage
-    elemLast = elemIni+maxElemPerPage-1
-    document.querySelectorAll('.card-pokemon').forEach((el,idx)=>{
-      if(idx>=elemIni && idx<=elemLast){
-        el.style.display = 'flex'
-      }else{
-        el.style.display = 'none'
+  if (elemIni !== 0) {
+    elemIni = elemIni - maxElemPerPage;
+    elemLast = elemIni + maxElemPerPage - 1;
+    document.querySelectorAll(".card-pokemon").forEach((el, idx) => {
+      if (idx >= elemIni && idx <= elemLast) {
+        el.style.display = "flex";
+      } else {
+        el.style.display = "none";
       }
-    })
-    page_num--
-    page.innerHTML = page_num
+    });
+    page_num--;
+    page.innerHTML = page_num;
   }
-  return [elemIni, elemLast, page_num]
+  return [elemIni, elemLast, page_num];
 }
-
-
-
-

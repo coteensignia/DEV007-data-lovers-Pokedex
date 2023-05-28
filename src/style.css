@@ -12,7 +12,6 @@ header {
   width: 100%;
   height: 100px;
   background-color: #d93e30;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   display: none;
@@ -66,6 +65,14 @@ footer {
   background-image: url(./img/logo.png);
   background-size: cover;
 }
+.logo3{
+  display: none;
+  width: 350px;
+  height: 130px;
+  margin-left: 30px;
+  background-image: url(./img/logo.png);
+  background-size: cover;
+}
 .logo1 {
   display: none;
 }
@@ -78,16 +85,20 @@ footer {
 }
 
 .intro-img {
-  width: 832px;
+  width: 1000px;
   height: 100%;
+  object-fit: contain;
+  
+  
 
 }
 .intro-text{
  
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: center;
   align-items: center;
+ 
 
 }
 
@@ -96,8 +107,8 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 100px;
- 
+  padding: 50px;
+  height: 1024px;
 }
 
 .buttom-start{
@@ -107,6 +118,7 @@ footer {
   color: white;
   border-radius: 10px;
   padding: 10px 30px;
+  margin-top: 50px;
   font-size:20px;
   box-shadow: 0px 2px 0px 1px rgba(148,0,0,1);
 
@@ -176,9 +188,9 @@ footer {
   justify-content: center;
   gap: 15px;
   width: auto;
-  height: 50px;
+  height: 30px;
   word-wrap: break-word;
-  margin: 10px;
+  margin: 8px;
  
 }
 
@@ -223,7 +235,7 @@ p {
 
 .paginado{
   display: none;
-  margin: 50px;
+  margin: 50px 0px 100px 0px;
   
 }
 span{
@@ -242,6 +254,7 @@ span{
 .let{
   font-size: 25px;
   color: black;
+  margin-top: 50px;
 }
 a{
   text-decoration: none;
@@ -476,13 +489,21 @@ padding: 8px;
 /*media query tablet */
 
 @media (max-width: 768px) and (min-width: 479px)  {
-  .containerCard {
+  body {
     display: flex;
+    width: 760px;
+  }
+  
+  .containerCard {
+    display: none;
     width: 700px;
     border: 20px solid;
     background-color: #fff;
     border-color: #4052d9;
     
+  }
+  footer{
+    margin: auto;
   }
 
   .card {
@@ -493,7 +514,39 @@ padding: 8px;
   .card-img {
     width: 150px;
   }
+  .pag-start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 768px;
+    padding: 0px;
+    justify-content: center;
+    
+  }
+  .intro-img {
+    width: 100%;
+    height: 450px;
+  
+  }
+  .let{
+    margin: 0px;
+  }
+  .logo3{
+    display: flex;
+    width: 50%;
+    
+    
+  }
+   
+  .logo2{
+    display: none;
+  }
+  .buttom-start{
+    margin: 31px;
+  }
+  
 }
+
 
 
 /*....................responsivo.............media query mobile */
@@ -502,15 +555,21 @@ padding: 8px;
 
   body {
     display: flex;
-  width: 390px;
+    width: 390px;
+   margin-top: 25px;
   }
 
-nav{
+  nav{
   width:360px;
 }
 
   .pag-start{
     width: 390px;
+    padding: 10px;
+    height: 100%;
+  }
+  footer{
+    margin: auto;
   }
 
   .containerCard {
@@ -524,7 +583,7 @@ nav{
   }
   
   .intro-img {
-    width: 360px;
+    width: 380px;
     height: 100%;
   
   }
@@ -547,24 +606,12 @@ nav{
   }
 
   header {
-    display: flex;
-    width: 390px;
-    flex-direction: column;
+    display: none;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    
   }
-
-  header {
-    margin-top: 40px;
-    width: 100%;
-    height: 50px;
-    background-color: #d93e30;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  
- 
+  .search{
+    margin: 0px;
   }
 
 .logo {
@@ -574,10 +621,13 @@ nav{
 .logo1 {
   width: 300px;
   height: 100px;
-margin-top: 20px;
+  margin-top: 20px;
   background-image: url(./img/logo.png);
   background-size: cover;
   display: flex;
+}
+.logo2{
+  display: none;
 }
 
 
@@ -586,9 +636,13 @@ margin-top: 20px;
 }
 
 .pag-start{
+  padding-top: 25px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 100px;
 }
 
-
+.buttom-start{
+  margin: 50px;
+}
 }

@@ -1,26 +1,29 @@
-
 //------------------------------------ inicialización
 
 // important funciones para crear tarjetas "card" y crear modal "openCard"
-import { card, openCard, paginationInit, next, prev,ordeningCp, ordeningNum} from './data.js';
-
+import {
+  card,
+  openCard,
+  paginationInit,
+  next,
+  prev,
+  ordeningCp,
+  ordeningNum,
+} from "./data.js";
 
 // important datos
 import data from "./data/pokemon/pokemon.js";
 
-
 // crar constantes curpo, contenedor e input de busqueda
 
-
-const body = document.querySelector("body")
-const containerCard = document.querySelector(".containerCard")
-const buscar = document.getElementById("buscar")
+const body = document.querySelector("body");
+const containerCard = document.querySelector(".containerCard");
+const buscar = document.getElementById("buscar");
 
 // crear constantes de botones para filtrado y orden
 const buttonType = document.getElementById("buttomType");
 const buttonOrder = document.getElementById("buttomOrder");
 const buttomCp = document.getElementById("buttomCp");
-
 
 const startButton = document.getElementById("startButton");
 const upperDoc = document.getElementById("upperDoc");
@@ -35,48 +38,45 @@ startButton.addEventListener("click", () => {
   upperDoc.style.display = "flex";
   nav.style.display = "flex";
   paginado.style.display = "flex";
-
 });
-
-
-
 
 //------------------------------------ impresion de cards + paginación
 
 // crear pagina (ejecucion)
 // change(1,data,containerCard,body)
 // change(1,data,containerCard,body)
-let maxElemPerPage = 30;
+const maxElemPerPage = 30;
 let elemIni = 0;
-let elemLast = maxElemPerPage-1;
-let len = data.pokemon.length;
+let elemLast = maxElemPerPage - 1;
+const len = data.pokemon.length;
 let page_num = 1;
 
 const page = document.getElementById("page");
 const btn_next = document.getElementById("btn_next");
 const btn_prev = document.getElementById("btn_prev");
 
-paginationInit(data, elemLast, page_num, page, containerCard, body)
+paginationInit(data, elemLast, page_num, page, containerCard, body);
 
-
-
-btn_next.addEventListener("click", ()=>{
-  [elemIni,elemLast,page_num]  = next(maxElemPerPage, elemIni, elemLast, page_num, page, len)
+btn_next.addEventListener("click", () => {
+  [elemIni, elemLast, page_num] = next(
+    maxElemPerPage,
+    elemIni,
+    elemLast,
+    page_num,
+    page,
+    len
+  );
 });
 
-btn_prev.addEventListener("click", ()=>{
-  [elemIni,elemLast,page_num]  = prev(maxElemPerPage, elemIni, elemLast, page_num, page)
+btn_prev.addEventListener("click", () => {
+  [elemIni, elemLast, page_num] = prev(
+    maxElemPerPage,
+    elemIni,
+    elemLast,
+    page_num,
+    page
+  );
 });
-
-
-
-
-
-
-
-
-
-
 
 // ------------------------------------ interaccion input busqueda
 
@@ -98,49 +98,36 @@ btn_prev.addEventListener("click", ()=>{
   openCard(data.pokemon, body)
 });*/
 
+buscar.addEventListener("keydown", function () {
+  const val = buscar.value.toLowerCase();
+  if (val.length > 1) {
+    let out = "";
+    data.pokemon.forEach((poke, idx) => {
+      // EVALUAR SI LO Q ENTRA EN INPUT EXISTE COMO PARTE DE ALGUN NOMBRE
+      // poke.name   (el nombre en objeto)
+      // includes    (revisa si incluye en )
+      // val         (el texto q esta entrando en input)
+      if (poke.name.includes(val)) {
+        out += card(idx, poke);
+      }
+    });
+    containerCard.innerHTML = out;
 
-
-buscar.addEventListener("keydown", function(){
-    const val = buscar.value.toLowerCase();
-     if(val.length > 1){
-      
-      let out = ''
-      data.pokemon.forEach((poke,idx)=>{
-        // EVALUAR SI LO Q ENTRA EN INPUT EXISTE COMO PARTE DE ALGUN NOMBRE
-        // poke.name   (el nombre en objeto)
-        // includes    (revisa si incluye en )
-        // val         (el texto q esta entrando en input)
-        if(poke.name.includes(val)){
-          out += card(idx, poke)
-        }
-      })
-      containerCard.innerHTML = out
-    
-      // crea funciones para modales
-      openCard(data.pokemon, body)
-          //Llamada ajax
-    }
+    // crea funciones para modales
+    openCard(data.pokemon, body);
+    //Llamada ajax
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
 
 // ------------------------------------ interaccion botones filtrado
 
-buttonType.addEventListener("click", e=>{
+buttonType.addEventListener("click", (e) => {
   // como el div q contiene el boton ----> NODO PADRE
-  const parent = e.target.parentNode
+  const parent = e.target.parentNode;
   // insertAdjacentHTML   --->   AGREGA CONTENIDO SIN RECARGAR EL DIV a diferencia de innerHTML
   parent.insertAdjacentHTML(
-    'beforeend', `
+    "beforeend",
+    `
     <ul class="list-type" id="listType">
       <li class="btn-filter-type water"    poke-type="water"    >  Water     </li>
       <li class="btn-filter-type dragon"   poke-type="dragon"   >  Dragon    </li>
@@ -165,96 +152,66 @@ buttonType.addEventListener("click", e=>{
   );
 
   // tomar todos los botones
-  const btnFilterType = document.querySelectorAll('.btn-filter-type')
+  const btnFilterType = document.querySelectorAll(".btn-filter-type");
 
   // filtrar y crear modales(openCard)
-  btnFilterType.forEach(btn => {
-    btn.addEventListener('click', btn_e=>{
+  btnFilterType.forEach((btn) => {
+    btn.addEventListener("click", (btn_e) => {
       //pokeType  --->  el tipo en el atributo del boton
-      const pokeType = btn_e.target.getAttribute('poke-type')
-      let out = ''
-      
+      const pokeType = btn_e.target.getAttribute("poke-type");
+      let out = "";
+
       // filtrado
-      data.pokemon.forEach((e_poke,idx_poke)=>{
+      data.pokemon.forEach((e_poke, idx_poke) => {
         // e_poke.type (es el arregle de tipos de pokemon en el objeto con 251)
         //.includes    (si está incluido)
         // pokeType    (el tipo en el atributo del boton)
-        if(e_poke.type.includes(pokeType)){
-          out += card(idx_poke, e_poke)
+        if (e_poke.type.includes(pokeType)) {
+          out += card(idx_poke, e_poke);
         }
-      })
+      });
 
-      
-      containerCard.innerHTML = out
+      containerCard.innerHTML = out;
 
       // modal
-      openCard(data.pokemon, body) 
-    })
+      openCard(data.pokemon, body);
+    });
   });
 
-
   // mostrar y ocultar lista de botones azules
-  const listType = document.querySelector('#listType')
+  const listType = document.querySelector("#listType");
   // escucha cuando entra
-  listType.addEventListener('mouseenter', ()=>{
+  listType.addEventListener("mouseenter", () => {
     // escucha cuando sale
-    listType.addEventListener('mouseleave', ()=>{
+    listType.addEventListener("mouseleave", () => {
       // remueve
-      listType.remove()
-    })
-  })
-
-
-})
-
-
-
-
-
-
-
-
-
-
-
+      listType.remove();
+    });
+  });
+});
 
 // ------------------------------------ interaccion bonton mostrar todos
 
-buttonOrder.addEventListener("click", ()=>{
+buttonOrder.addEventListener("click", () => {
   // crea todas las card
-  let out = ''
-  const ordenNum = ordeningNum(data.pokemon)
-  ordenNum.forEach((e_poke,idx_poke)=>{
-    out += card(idx_poke, e_poke)
-  })
-  containerCard.innerHTML = out
+  let out = "";
+  const ordenNum = ordeningNum(data.pokemon);
+  ordenNum.forEach((e_poke, idx_poke) => {
+    out += card(idx_poke, e_poke);
+  });
+  containerCard.innerHTML = out;
   // crea funciones para modales
-  openCard(data.pokemon, body)
+  openCard(data.pokemon, body);
 });
 
+buttomCp.addEventListener("click", () => {
+  let out = "";
+  const orderCp = ordeningCp(data.pokemon);
 
-buttomCp.addEventListener('click', ()=>{
-  let out = ''
-  let orderCp = ordeningCp(data.pokemon)
-
-  orderCp.forEach((e_poke,idx_poke)=>{
-    out += card(idx_poke, e_poke)
-  })
-  containerCard.innerHTML = out
+  orderCp.forEach((e_poke, idx_poke) => {
+    out += card(idx_poke, e_poke);
+  });
+  containerCard.innerHTML = out;
   // crea funciones para modales
-  openCard(data.pokemon, body)
+  openCard(data.pokemon, body);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
