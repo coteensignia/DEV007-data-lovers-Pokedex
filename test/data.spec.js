@@ -1,91 +1,111 @@
-import { card, ordeningCp, ordeningNum, calculation, prev, next, paginationInit, } from '../src/data.js';
+import { ordeningCp, ordeningNum, filteringName,  calculation } from "../src/data.js";
+
+//Data ficticia simulando la data real
+const data = [
+  { "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115"}},
+  { "name": "psyduck", "type": ["water"],"num": "54", "stats": {"max-cp": "1106"}},
+  { "name": "squirtle", "type": ["water"], "num": "7", "stats": {"max-cp": "946"}},
+  { "name": "charmander", "type": ["fire"], "num": "4", "stats": { "max-cp": "980"}},
+  { "name": "pikachu", "type": ["electric"], "num": "25", "stats": { "max-cp": "671"}}      
+];
+
+//Resultados esperados
+/*const pokemonGrass = [{ "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115"}}];
+const pokemonWater = [
+  { "name": "squirtle", "type": ["water"], "num": "7", "stats": {"max-cp": "946"}},
+  {"name": "psyduck", "type": ["water"],"num": "54", "stats": {"max-cp": "1106"}}
+];
+const pokemonFire = [{ "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980"}}];
+const pokemonElectric = [{ "name": "pikachu", "type": ["electric"], "num": "25", "stats": {"max-cp": "671"}}];*/
+//resultado esperado al ordenar por numero
+const outputNewArrayNum =
+[
+  { "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115"}},
+  { "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980"}},
+  { "name": "squirtle", "type": ["water"], "num": "7", "stats": {"max-cp": "946"}},
+  { "name": "pikachu", "type": ["electric"], "num": "25", "stats": {"max-cp": "671"}},
+  { "name": "psyduck", "type": ["water"],"num": "54", "stats": {"max-cp": "1106"}}    
+];
+
+//resultado ordenado por nombre
+const outputNewArrayName =
+[
+  { "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115" }},
+  { "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980"}},
+  { "name": "pikachu", "type": ["electric"], "num": "25", "stats": {"max-cp": "671"}},
+  { "name": "psyduck", "type": ["water"],"num": "54", "stats": {"max-cp": "1106"}},
+  { "name": "squirtle", "type": ["water"], "num": "7", "stats": {"max-cp": "946"}}
+];
+
+////resultado esperado al filtrar por CP
+const outputNewObjCP =
+[
+  { "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115" }},
+  { "name": "psyduck", "type": ["water"],"num": "54", "stats": {"max-cp": "1106"}},
+  { "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980" }},
+  { "name": "squirtle", "type": ["water"], "num": "7", "stats": {"max-cp": "946"}},
+  { "name": "pikachu", "type": ["electric"], "num": "25", "stats": {"max-cp": "671"}}
+]
 
 
-describe('card', () => {
-  it('is a function', () => {
-    expect(typeof card).toBe('function');
+describe("ordeningCp function", () => {
+  it("is a function", () => {
+    expect(typeof ordeningCp).toBe("function");
+  });
+  it("is a nuevo objeto", () => {
+    expect(typeof outputNewObjCP).toBe("object");
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it("debería retornar un objeto ordenado de mayor a menor por max-cp", () => {
+    expect(ordeningCp(data.stats)).toEqual(outputNewObjCP);
   });
 });
 
-
-describe('ordeningCp', () => {
-  it('is a function', () => {
-    expect(typeof ordeningCp).toBe('function');
+describe("ordeningNum", () => {
+  it("is a function", () => {
+    expect(typeof ordeningNum).toBe("function");
   });
 
-  it('debería retornar un objeto al tocar el boton cp', () => {
-    expect(ordeningCp()).toBe('object');
-  });
-});
-
-describe('ordeningNum', () => {
-  it('is a function', () => {
-    expect(typeof ordeningNum).toBe('function');
-  });
-
-  it('debería retornar un objeto al tocar el boton All', () => {
-    expect(ordeningNum()).toBe('object');
+  it("debería retornar un array ordenado de menor a mayor por numero", () => {
+    expect(ordeningNum(data)).toEqual(outputNewArrayNum);
   });
 });
 
-describe('calculation', () => {
-  it('is a function', () => {
-    expect(typeof calculation).toBe('function');
+describe("filteringName", () => {
+  it("is a function", () => {
+    expect(typeof filteringName).toBe("function");
+  });
+  it("debería retornar un array con los datos de bulbasaur", () => {
+    expect(ordeningCp(data)).toEqual(outputNewArrayName);
   });
 
-  it('debería retornar un numero)', () => {
-    expect(attack-defense).toBe('Number');
-  });
 });
-265
 
-
-
-/*importamos el objeto `validator`, que contiene las funciones `isValid` y `maskify`
-import validator from '../src/validator';
-
-describe('validator', () => {
-  it('debería ser un objeto', () => {
-    expect(typeof validator).toBe('object');
+/*describe("filteringType", () => {
+  it("is a function", () => {
+    expect(typeof filteringType).toBe("function");
   });
+  
+  it("Debería retornar el tipo grass", () => {});
+  expect(filteringType(data, "grass")).toEqual(pokemonGrass);
 
-  describe('validator.isValid', () => {
-    it('debería ser una función', () => {
-      expect(typeof validator.isValid).toBe('function');
-    });
+  it("Debería retornar el tipo water", () => {});
+  expect(filteringType(data, "water")).toEqual(pokemonWater);
 
-    it('debería retornar true para "4083952015263"', () => {
-      expect(validator.isValid('4083952015263')).toBe(true);
-    });
+  it("Debería retornar el tipo fire", () => {});
+  expect(filteringType(data, "fire")).toEqual(pokemonFire);
 
-    it('debería retornar true para "79927398713"', () => {
-      expect(validator.isValid('79927398713')).toBe(true);
-    }); 
-
-    it('debería retornar false para "1234567890"', () => {
-      expect(validator.isValid('1234567890')).toBe(false);
-    });
-  });
-
-  describe('validator.maskify', () => {
-    it('debería ser una función', () => {
-      expect(typeof validator.maskify).toBe('function');
-    });
-
-    it('Debería retornar "############5616" para "4556364607935616"', () => {
-      expect(validator.maskify('4556364607935616')).toBe('############5616');
-    });
-
-    it('Debería retornar "1" para "1"', () => {
-      expect(validator.maskify('1')).toBe('1');
-    });
-
-    it('Debería retornar "######orld" para "helloworld"', () => {
-      expect(validator.maskify('helloworld')).toBe('######orld');
-    });
-  });
+  it("Debería retornar el tipo electric", () => {});
+  expect(filteringType(data, "electric")).toEqual(pokemonElectric);
+  
 });*/
+
+describe("calculation", () => {
+  it("is a function", () => {
+    expect(typeof calculation).toBe("function");
+  });
+
+  it("debería retornar (7) para la resta de 118-111", () => {
+    expect(calculation(118, 111)).toBe(7);
+  });
+});

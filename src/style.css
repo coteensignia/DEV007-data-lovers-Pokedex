@@ -12,10 +12,10 @@ header {
   width: 100%;
   height: 100px;
   background-color: #d93e30;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   display: none;
+  border: 10px solid #f00; dev:dev;
 }
 
 body {
@@ -25,6 +25,9 @@ body {
   align-items: center;
   background-image: url(./img/container_bg.png),
     linear-gradient(1deg, #cd9900 0%, #ffe520 100%);
+    background-size: cover;
+
+  border: 10px solid #000; dev:dev;
 }
 
 .containerCard {
@@ -56,9 +59,18 @@ footer {
   bottom:0px;
   margin-top: 500px;
   padding: 10px;
+  border: 10px solid #f00; dev:dev;
 }
 
 .logo {
+  width: 350px;
+  height: 130px;
+  margin-left: 30px;
+  background-image: url(./img/logo.png);
+  background-size: cover;
+}
+.logo3{
+  display: none;
   width: 350px;
   height: 130px;
   margin-left: 30px;
@@ -69,35 +81,95 @@ footer {
   display: none;
 }
 
-.logo2 {
-  width: 350px;
-  height: 130px;
-  background-image: url(./img/logo.png);
-  background-size: cover;
-}
 
-.intro-img {
-  width: 832px;
-  height: 100%;
 
-}
-.intro-text{
- 
-  display: flex;
-  flex-direction: column;
-  justify-content:space-between;
-  align-items: center;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .pag-start{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  padding: 50px;
   width: 100%;
-  padding: 100px;
- 
+  height: auto;
+  border: 10px solid #0f0; dev:dev;
 }
+
+
+.intro-logo {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  width: 350px;
+  height: auto;
+  border: 1px solid #f00; dev:dev;
+  
+}
+
+
+.intro-img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  object-fit: contain;
+  border: 10px solid #041; dev:dev;
+}
+
+.intro-text{
+  display: flex;
+  flex-wrap: wrap;
+  width: 20%;
+  border: 10px solid #401; dev:dev;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.intro-text-msg{
+  border: 1px solid #000; dev:dev;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-text-msg .v1{
+  position: relative;
+  left: 0;
+  margin: 0;
+  font-size: 30px;
+  width: 100%;
+}
+
+.intro-text-msg .v2{
+  position: relative;
+  left: 0;
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+  width: 100%;
+}
+
+
 
 .buttom-start{
   width: auto;
@@ -105,7 +177,8 @@ footer {
   background-color: #C5312A;
   color: white;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 30px;
+  margin-top: 50px;
   font-size:20px;
   box-shadow: 0px 2px 0px 1px rgba(148,0,0,1);
 
@@ -175,9 +248,10 @@ footer {
   justify-content: center;
   gap: 15px;
   width: auto;
-  height: 50px;
+  height: 30px;
   word-wrap: break-word;
-  margin: 10px;
+  margin: 8px;
+ 
 }
 
 h3 {
@@ -185,7 +259,11 @@ h3 {
   font-size: 20px;
   text-transform: capitalize;
 }
-
+h2{
+  color: #4052d9;
+  font-size: 15px;
+  text-transform: capitalize;
+}
 
 
  
@@ -217,7 +295,7 @@ p {
 
 .paginado{
   display: none;
-  margin: 50px;
+  margin: 50px 0px 100px 0px;
   
 }
 span{
@@ -233,6 +311,7 @@ span{
   align-items: center;
 
 }
+
 a{
   text-decoration: none;
   font-size: larger;
@@ -463,16 +542,43 @@ padding: 8px;
 
 
 
+
+
+
+
+
+
 /*media query tablet */
 
-@media (max-width: 768px) and (min-width: 479px)  {
-  .containerCard {
+@media (max-width: 1057px){
+  .intro-logo{
+    width: 300px;
+  }
+}
+
+@media (max-width: 910px){
+  .intro-logo{
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px){
+
+  body {
     display: flex;
+    width: 760px;
+  }
+  
+  .containerCard {
+    display: none;
     width: 700px;
     border: 20px solid;
     background-color: #fff;
     border-color: #4052d9;
     
+  }
+  footer{
+    margin: auto;
   }
 
   .card {
@@ -483,24 +589,70 @@ padding: 8px;
   .card-img {
     width: 150px;
   }
+  .pag-start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 768px;
+    padding: 0px;
+    justify-content: center;
+    
+  }
+  .intro-img {
+    width: 100%;
+    height: 450px;
+    border: 10px solid #00f; dev:dev;
+  }
+  .let{
+    margin: 0px;
+  }
+  .logo3{
+    display: flex;
+    width: 50%;
+  }
+
+  .logo2{
+    display: none;
+  }
+  .buttom-start{
+    margin: 31px;
+  }
+
+  .intro-logo{
+    position: relative;
+    right: 0;
+    top: 0;
+
+    
+    border: 1px solid #000; dev:dev;
+  }
+
 }
+
 
 
 /*....................responsivo.............media query mobile */
 
-@media (max-width: 390px) and (min-width: 320px)  {
+@media (max-width: 390px) {
 
   body {
     display: flex;
-  width: 390px;
+    width: 390px;
+    margin-top: 25px;
   }
 
-nav{
-  width:360px;
-}
+  nav{
+    width:360px;
+  }
 
   .pag-start{
     width: 390px;
+    padding: 10px;
+    height: 100%;
+  }
+
+  footer{
+    margin: auto;
   }
 
   .containerCard {
@@ -514,7 +666,7 @@ nav{
   }
   
   .intro-img {
-    width: 360px;
+    width: 380px;
     height: 100%;
   
   }
@@ -537,48 +689,45 @@ nav{
   }
 
   header {
+    display: none;
+    justify-content: center;
+    
+  }
+
+  .search{
+    margin: 0px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo1 {
+    width: 300px;
+    height: 100px;
+    margin-top: 20px;
+    background-image: url(./img/logo.png);
+    background-size: cover;
     display: flex;
-    width: 390px;
+  }
+
+  .logo2{
+    display: none;
+  }
+
+  .containerCard {
+    display: none;
+  }
+
+  .pag-start{
+    padding-top: 25px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    padding-bottom: 100px;
   }
 
-  header {
-    margin-top: 40px;
-    width: 100%;
-    height: 50px;
-    background-color: #d93e30;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  
- 
+  .buttom-start{
+    margin: 50px;
   }
-
-.logo {
-  display: none;
-  
-}
-.logo1 {
-  width: 300px;
-  height: 100px;
-margin-top: 20px;
-  background-image: url(./img/logo.png);
-  background-size: cover;
-  display: flex;
-}
-
-
-.containerCard {
-  display: none;
-}
-
-.pag-start{
-  display: flex;
-  flex-direction: column;
-}
-
 
 }

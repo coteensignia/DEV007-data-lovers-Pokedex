@@ -31,6 +31,7 @@
 
 ## 1. Resumen del proyecto 📝
 
+<<<<<<< HEAD
 El objetivo de este proyecto, es  **construir una página web responsive** que proporcione información relevante a nuestros usuarios. Para lograrlo, vamos a utilizar un archivo llamado "data.js" que contiene detalles sobre `251 Pokémones`. A partir de este archivo, importaremos y extraeremos los datos necesarios para mostrar la información según las preferencias de los usuarios. De esta manera, los usuarios estarán `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, para satisfacer sus necesidades. El propósito principal de estas funcionalidades es mejorar la experiencia de los usuarios, permitiéndoles adquirir diferentes características de los Pokémones para mejorar sus estrategias de juego o simplemente teniendo toda la información en un solo lugar.
 
 ### 2. Proceso UX-UI 👩🏻‍🎨🎨
@@ -46,6 +47,9 @@ Nuestro objetivo principal es transmitir la información de manera clara y preci
 ![laptopL](../pokemon/../../img/res/d-2.png)
 ![laptopL](../pokemon/../../img/res/d-3.png)
 ### Responsividad - Vista Final Mobile 📲
+=======
+Este proyecto tiene como finalidad **construir una página web responsive** que contenga información relevante solicitada por nuestros usuarios, permitiendoles interactuar `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, con la **finalidad** de mejorar la experiencia y/o estrategia que estos tienen, ya que podrán comparar diversas cualidades de los pokémones y, para aquellos que recién comienzan, conseguir  una inserción rápida en el juego. Para esto, vamos a interactuar con una base de datos (pokemon.js), que cuenta con la información de los `251 Pokémones`, de la cual se va exportar la data, manipular y presentar en pantalla por medio de los archivos data.js y main.js, respectivamente. A continuación se presenta paso a paso el desarrollo del proyecto.
+>>>>>>> c3e83763a8a6b63a67afcafd3174d0534e12e3ca
 
 
 
@@ -309,7 +313,7 @@ Para las pruebas Unitarias `(tests)`, se tuvo que crear nuestras propias funcion
 - [✔️] Incluye historias de usuario en README.md.
 - [✔️] Incluye sketch de la solución (prototipo de baja fidelidad) en README.md.
 - [✔️] Incluye Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) en README.md.
-- [❌] Incluye link a Zeplin/Loom en README.md.
+- [❌] Incluye link a Zeplin/Loom en README.md. en cruz
 - [✔️] Incluye el listado de problemas que detectaste a través de tests de usabilidad en el README.md.
 - [〰️] UI: Muestra lista y/o tabla con datos y/o indicadores.
 - [✔️] UI: Permite ordenar data por uno o más campos (asc y desc).
