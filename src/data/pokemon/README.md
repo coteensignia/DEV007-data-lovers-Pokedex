@@ -4,7 +4,7 @@
 # Data Lovers – Pokédex 
 
 
-## 🎯 Índice 
+##  Índice 🎯
 
 1. [**Resumen del proyecto**](https://github.com/Shirley-Garrido97/LIM012-data-lovers/tree/shirley#1-resumen-del-proyecto-)
 2. [**Descripción del proyecto**](https://github.com/Shirley-Garrido97/LIM012-data-lovers/tree/shirley#2-descripci%C3%B3n-del-proyecto-)
@@ -31,39 +31,28 @@
 
 ## 1. Resumen del proyecto 📝
 
-Este proyecto tiene como finalidad **construir una página web responsive**, que contenga información relevante para nuestros usuarios,para esto vamos a interactuar con una data.js, que cuenta con la información de los `251 Pokémones`. De la cual se va importar y extraer los datos requeridos, según las necesidades de nuestrxs usuarios, para visualizar la información. De esta manera los usuarios podrán interactuar `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, para satisfacer sus necesidades. Con la **finalidad** de mejorar la experiencia que estos tienen, ya que podrán comprar diversas cualidades de los pokémones, permitiendo mejorar sus estrategias, así como una inserción rápida en el juego para aquellos que recién comienzan.
+El objetivo de este proyecto, es  **construir una página web responsive** que proporcione información relevante a nuestros usuarios. Para lograrlo, vamos a utilizar un archivo llamado "data.js" que contiene detalles sobre `251 Pokémones`. A partir de este archivo, importaremos y extraeremos los datos necesarios para mostrar la información según las preferencias de los usuarios. De esta manera, los usuarios estarán `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, para satisfacer sus necesidades. El propósito principal de estas funcionalidades es mejorar la experiencia de los usuarios, permitiéndoles adquirir diferentes características de los Pokémones para mejorar sus estrategias de juego o simplemente teniendo toda la información en un solo lugar.
+
+### 2. Proceso UX-UI 👩🏻‍🎨🎨
+
+Nuestro objetivo principal es transmitir la información de manera clara y precisa, al mismo tiempo que brindamos una experiencia visualmente agradable para nuestros usuarios. Para lograr esto, nos hemos enfocado en utilizar un diseño limpio y simple que facilite el reconocimiento de la interfaz de nuestra página web de manera rápida.
+
+ Nuestro enfoque se basa en los siete principios básicos de diseño, también conocidos como la Teoría de la Gestalt, los cuales nos ayudan a crear una composición armoniosa y coherente en la presentación de la información.
+ ![laptopL](../pokemon/../../img/Captura%20de%20pantalla%202023-05-29%20a%20las%2018.55.22.png)
+
+
+### Responsividad - Vista Final Desktop 💻
+![laptopL](../pokemon/../../img/res/d-1.png)
+![laptopL](../pokemon/../../img/res/d-2.png)
+![laptopL](../pokemon/../../img/res/d-3.png)
+### Responsividad - Vista Final Mobile 📲
 
 
 
-### 2.1 Proceso Creativo de Diseño 👩🏻‍🎨🎨
 
-* Estilo
-
-Para el proyecto se opto por un estilo minimalista, ya que nuestro objetivo es poder transmitir la información de forma clara y precisa, y que a su vez pueda ser amigable ante la vista de nuestros usuarios, asi ellos puedan tener un rapido reconocimiento de la interfaz de nuestra pagina web.
-
-* Teoria de color
-
-Por defecto la data contiene una amplia diversidad de colores, es por ello que se se buscó dar un equilibrio, obtando por no sobrecargar nuestra pagina web con elementos visuales que no aporten valor a la funcionalidad de la pagina.
- 
-### 2.2 Vista Final Desktop 💻
+### Responsividad - Vista Final Tablet 📱
 
 
-### 2.3 Vista Final Mobile 📲
-
-![3](https://user-images.githubusercontent.com/60928765/78805031-86a8a800-7986-11ea-97d2-7797effa0f74.png)
-![4](https://user-images.githubusercontent.com/60928765/78805051-8e684c80-7986-11ea-8772-c267f0735e6e.png)
-![5](https://user-images.githubusercontent.com/60928765/78805083-988a4b00-7986-11ea-9820-8c0a2b09bf1e.png)
-![6](https://user-images.githubusercontent.com/60928765/78805112-a2ac4980-7986-11ea-9b01-19ed9f28a60c.png)
-
-
-### 2.4 Vista Final Tablet 📱
-
-![7](https://user-images.githubusercontent.com/60928765/78810127-8cee5280-798d-11ea-8668-1124d00fad79.png)
-![8](https://user-images.githubusercontent.com/60928765/78810145-937cca00-798d-11ea-862d-6db8e2873105.png)
-![9](https://user-images.githubusercontent.com/60928765/78810163-9d9ec880-798d-11ea-9e37-aa8b62eac632.png)
-![10](https://user-images.githubusercontent.com/60928765/78810183-a2637c80-798d-11ea-9eb0-6ed1ae72bb9f.png)
-![11](https://user-images.githubusercontent.com/60928765/78810225-b313f280-798d-11ea-80d7-702c77f7b610.png)
-![12](https://user-images.githubusercontent.com/60928765/78810252-bc04c400-798d-11ea-85de-a10cd8eb8f06.png)
 
 
 ## 3. Investigación UX 🔍
