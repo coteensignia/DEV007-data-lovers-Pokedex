@@ -1,6 +1,6 @@
 // ------------------------------------ card
 export function card(i, poke, hide = null) {
-  const hideInitial = hide==="hide" ? ' style="display:none;" ' : "";
+  const hideInitial = hide === "hide" ? ' style="display:none;" ' : "";
 
   const out = ` 
   <div ${hideInitial} class="card-pokemon"> 
@@ -98,7 +98,7 @@ function cardDetails(poke) {
         </div>
         <div class="sec">
           <div class="title">Att-Def</div>
-          <div class="info">${calculation(poke.stats["base-attack"],poke.stats["base-defense"])}</div>
+          <div class="info">${calculation(poke.stats["base-attack"], poke.stats["base-defense"])}</div>
         </div>
         <div class="sec">
           <div class="title">Cp-max</div>
@@ -120,7 +120,7 @@ function cardDetails(poke) {
 
 //cálculo
 function calculation(attack, defense) {
- // console.log(typeof calculation)
+//console.log(typeof calculation)
   return attack - defense;
 }
 

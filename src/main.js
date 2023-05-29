@@ -29,7 +29,7 @@ const startButton = document.getElementById("startButton");
 const upperDoc = document.getElementById("upperDoc");
 const nav = document.getElementById("nav");
 const paginado = document.getElementById("paginado");
-
+const pagStart = document.getElementById("pagStart")
 // ocultar segunda pagina evento
 
 startButton.addEventListener("click", () => {
@@ -193,7 +193,7 @@ buttonType.addEventListener("click", (e) => {
 // ------------------------------------ interaccion bonton mostrar todos
 
 buttonOrder.addEventListener("click", () => {
-  // crea todas las card
+  //imprime todas las cartas ordenadas por números
   let out = "";
   const ordenNum = ordeningNum(data.pokemon);
   ordenNum.forEach((e_poke, idx_poke) => {

@@ -31,7 +31,7 @@
 
 ## 1. Resumen del proyecto 📝
 
-Este proyecto tiene como finalidad **construir una página web responsive**, que contenga información relevante para nuestros usuarios,para esto vamos a interactuar con una data.js, que cuenta con la información de los `251 Pokémones`. De la cual se va importar y extraer los datos requeridos, según las necesidades de nuestrxs usuarios, para visualizar la información. De esta manera los usuarios podrán interactuar `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, para satisfacer sus necesidades. Con la **finalidad** de mejorar la experiencia que estos tienen, ya que podrán comprar diversas cualidades de los pokémones, permitiendo mejorar sus estrategias, así como una inserción rápida en el juego para aquellos que recién comienzan.
+Este proyecto tiene como finalidad **construir una página web responsive** que contenga información relevante solicitada por nuestros usuarios, permitiendoles interactuar `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, con la **finalidad** de mejorar la experiencia y/o estrategia que estos tienen, ya que podrán comparar diversas cualidades de los pokémones y, para aquellos que recién comienzan, conseguir  una inserción rápida en el juego. Para esto, vamos a interactuar con una base de datos (pokemon.js), que cuenta con la información de los `251 Pokémones`, de la cual se va exportar la data, manipular y presentar en pantalla por medio de los archivos data.js y main.js, respectivamente. A continuación se presenta paso a paso el desarrollo del proyecto.
 
 
 
