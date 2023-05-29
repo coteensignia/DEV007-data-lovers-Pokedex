@@ -1,10 +1,8 @@
-
 // ------------------------------------ card
-
 
 export function ordeningCp(data_) {
   data_.sort((a, b) => {
-    if (a.stats["max-cp"] > b.stats["max-cp"]) {
+    if (parseInt(a.stats["max-cp"]) > parseInt(b.stats["max-cp"])) {
       return -1;
     }
     if (parseInt(a.stats["max-cp"]) < parseInt(b.stats["max-cp"])) {
@@ -12,11 +10,12 @@ export function ordeningCp(data_) {
     }
     return 0;
   });
+
   return data_;
 }
 
 export function ordeningNum(data_) {
-  data_.sort((a, b) => {
+  data_ = data_.sort((a, b) => {
     if (a.num < b.num) {
       return -1;
     }
@@ -28,25 +27,19 @@ export function ordeningNum(data_) {
   return data_;
 }
 
-
-
 export function filteringName(data_, val) {
-  data_ = data_.filter(el=>{
-    if(el.name.includes(val.toLowerCase())){
+  data_.filter((el) => {
+    if (el.name.includes(val.toLowerCase())) {
       return el;
     }
-  })
-  return data_
+  });
+  return data_;
 }
-
-
 
 export function filteringType(data_, val) {
-  return data_.filter( el => el.type.includes(val) ? el : null )
+  data_.filter((el) => (el.type.includes(val) ? el : null));
+  return data_;
 }
-
-
-
 
 //cálculo
 export function calculation(attack, defense) {
