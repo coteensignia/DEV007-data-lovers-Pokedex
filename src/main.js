@@ -190,24 +190,24 @@ buttonType.addEventListener("click", (e) => {
     "beforeend",
     `
       <ul class="list-type" id="listType">
-        <li class="btn-filter-type water"    poke-type="water"    >  Water     </li>
-        <li class="btn-filter-type dragon"   poke-type="dragon"   >  Dragon    </li>
-        <li class="btn-filter-type fire"     poke-type="fire"     >  Fire      </li>
-        <li class="btn-filter-type electric" poke-type="electric" >  Electric  </li>
-        <li class="btn-filter-type fairy"    poke-type="fairy"    >  Fairy     </li>
-        <li class="btn-filter-type ghost"    poke-type="ghost"    >  Ghost     </li>
-        <li class="btn-filter-type ice"      poke-type="ice"      >  Ice       </li>
-        <li class="btn-filter-type normal"   poke-type="normal"   >  Normal    </li>
-        <li class="btn-filter-type grass"    poke-type="grass"    >  Grass     </li>
-        <li class="btn-filter-type fighting" poke-type="fighting" >  Fighting  </li>
-        <li class="btn-filter-type bug"      poke-type="bug"      >  Bug       </li>
-        <li class="btn-filter-type poison"   poke-type="poison"   >  Poison    </li>
-        <li class="btn-filter-type flying"   poke-type="flying"   >  Flying    </li>
-        <li class="btn-filter-type psychic"  poke-type="psychic"  >  Psychic   </li>
-        <li class="btn-filter-type rock"     poke-type="rock"     >  Rock      </li>
-        <li class="btn-filter-type dark"     poke-type="dark"     >  Dark      </li>
-        <li class="btn-filter-type ground"   poke-type="ground"   >  Ground    </li>
-        <li class="btn-filter-type steel"    poke-type="steel"    >  Steel     </li>
+        <li class="btn-filter-type"     poke-type="water"    >  Water     </li>
+        <li class="btn-filter-type"     poke-type="dragon"   >  Dragon    </li>
+        <li class="btn-filter-type"     poke-type="fire"     >  Fire      </li>
+        <li class="btn-filter-type"     poke-type="electric" >  Electric  </li>
+        <li class="btn-filter-type"     poke-type="fairy"    >  Fairy     </li>
+        <li class="btn-filter-type"     poke-type="ghost"    >  Ghost     </li>
+        <li class="btn-filter-type"     poke-type="ice"      >  Ice       </li>
+        <li class="btn-filter-type"     poke-type="normal"   >  Normal    </li>
+        <li class="btn-filter-type"     poke-type="grass"    >  Grass     </li>
+        <li class="btn-filter-type"     poke-type="fighting" >  Fighting  </li>
+        <li class="btn-filter-type"     poke-type="bug"      >  Bug       </li>
+        <li class="btn-filter-type"     poke-type="poison"   >  Poison    </li>
+        <li class="btn-filter-type"     poke-type="flying"   >  Flying    </li>
+        <li class="btn-filter-type"     poke-type="psychic"  >  Psychic   </li>
+        <li class="btn-filter-type"     poke-type="rock"     >  Rock      </li>
+        <li class="btn-filter-type"     poke-type="dark"     >  Dark      </li>
+        <li class="btn-filter-type"     poke-type="ground"   >  Ground    </li>
+        <li class="btn-filter-type"     poke-type="steel"    >  Steel     </li>
       </ul>
       `
   );
