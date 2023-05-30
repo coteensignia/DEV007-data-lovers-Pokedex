@@ -18,7 +18,7 @@ const pokemonWater = [
 const pokemonFire = [{ "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980"}}];
 const pokemonElectric = [{ "name": "pikachu", "type": ["electric"], "num": "25", "stats": {"max-cp": "671"}}];*/
 //resultado esperado al ordenar por numero
-const outputNewArrayNum =
+const outputNewObjNum =
 [
   { "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115"}},
   { "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980"}},
@@ -28,13 +28,9 @@ const outputNewArrayNum =
 ];
 
 //resultado ordenado por nombre
-const outputNewArrayName =
+const outputNewObjName =
 [
   { "name": "bulbasaur", "type": ["grass"], "num": "1", "stats": {"max-cp": "1115" }},
-  { "name": "charmander", "type": ["fire"], "num": "4", "stats": {"max-cp": "980"}},
-  { "name": "pikachu", "type": ["electric"], "num": "25", "stats": {"max-cp": "671"}},
-  { "name": "psyduck", "type": ["water"],"num": "54", "stats": {"max-cp": "1106"}},
-  { "name": "squirtle", "type": ["water"], "num": "7", "stats": {"max-cp": "946"}}
 ];
 
 ////resultado esperado al filtrar por CP
@@ -57,7 +53,7 @@ describe("ordeningCp function", () => {
   });
 
   it("debería retornar un objeto ordenado de mayor a menor por max-cp", () => {
-    expect(ordeningCp(data.stats)).toEqual(outputNewObjCP);
+    expect(ordeningCp(data)).toEqual(outputNewObjCP);
   });
 });
 
@@ -66,8 +62,8 @@ describe("ordeningNum", () => {
     expect(typeof ordeningNum).toBe("function");
   });
 
-  it("debería retornar un array ordenado de menor a mayor por numero", () => {
-    expect(ordeningNum(data)).toEqual(outputNewArrayNum);
+  it("debería retornar un objeto ordenado de menor a mayor por numero", () => {
+    expect(ordeningNum(data)).toEqual(outputNewObjNum);
   });
 });
 
@@ -76,7 +72,7 @@ describe("filteringName", () => {
     expect(typeof filteringName).toBe("function");
   });
   it("debería retornar un array con los datos de bulbasaur", () => {
-    expect(ordeningCp(data)).toEqual(outputNewArrayName);
+    expect(filteringName(data),"Bulb").toEqual(outputNewObjName);
   });
 
 });

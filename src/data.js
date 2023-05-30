@@ -16,10 +16,10 @@ export function ordeningCp(data_) {
 
 export function ordeningNum(data_) {
   data_ = data_.sort((a, b) => {
-    if (a.num < b.num) {
+    if (parseInt(a.num) < parseInt(b.num)) {
       return -1;
     }
-    if (a.num > b.num) {
+    if (parseInt(a.num) > parseInt(b.num)) {
       return 1;
     }
     return 0;
@@ -28,8 +28,8 @@ export function ordeningNum(data_) {
 }
 
 export function filteringName(data_, val) {
-  data_.filter((el) => {
-    if (el.name.includes(val.toLowerCase())) {
+  data_= data_.filter((el) => {
+    if (el.name.includes(val)) {
       return el;
     }
   });
@@ -37,12 +37,12 @@ export function filteringName(data_, val) {
 }
 
 export function filteringType(data_, val) {
-  data_.filter((el) => (el.type.includes(val) ? el : null));
+  data_ = data_.filter((el) => (el.type.includes(val) ? el : null));
   return data_;
 }
 
 //cálculo
 export function calculation(attack, defense) {
   // console.log(typeof calculation)
-  return attack - defense;
+  return attack - defense
 }
