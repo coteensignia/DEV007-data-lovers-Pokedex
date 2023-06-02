@@ -4,17 +4,17 @@
 
 ## Índice 🎯
 
-1. [**Resumen del proyecto**]()
-   
-2. [**Proceso UX-UI**]()
+1. [**Resumen del proyecto**](##1-resumen-del-proyecto)
   
-3. [**Investigación UX**]()
+2. [**Proceso UX-UI**](##2-proceso-UX-UI)
+  
+3. [**Investigación UX**](##3-investigacion-ux)
    
-4. [**Objetivos de aprendizaje**]()
+4. [**Objetivos de aprendizaje**](##4-objetivos-de-aprendizaje)
    
-5. [**Pruebas Unitarias**]()
+5. [**Pruebas Unitarias**](##5-pruebas-unitarias)
    
-6. [**Checklist**]()
+6. [**Checklist**](##6-Checklist)
 
 ---
 
@@ -22,7 +22,7 @@
 
 El objetivo de este proyecto, es **construir una página web responsive** que proporcione información relevante a nuestros usuarios. Para lograrlo, vamos a utilizar un archivo llamado "data.js" que contiene detalles sobre `251 Pokémones`. A partir de este archivo, importaremos y extraeremos los datos necesarios para mostrar la información según las preferencias de los usuarios. De esta manera, los usuarios estarán `filtrando`, `ordenando` y obteniendo un `cálculo agregado` de la data, para satisfacer sus necesidades. El propósito principal de estas funcionalidades es mejorar la experiencia de los usuarios, permitiéndoles adquirir diferentes características de los Pokémones para mejorar sus estrategias de juego o simplemente teniendo toda la información en un solo lugar.
 
-### 2. Proceso UX-UI 👩🏻‍🎨🎨
+## 2. Proceso UX-UI 👩🏻‍🎨🎨
 
 [UX-Kit](<https://www.figma.com/file/UwWD2NwwPNv8eSDmJH8Hh9/Pokedex---Laboratoria-(Dev-007)?type=design&node-id=2-5&t=FnhaUHLWuEIGak1v-0>).
 Nuestro objetivo principal es transmitir la información de manera clara y precisa, al mismo tiempo que brindamos una experiencia visualmente agradable para nuestros usuarios. Para lograr esto, nos hemos enfocado en utilizar un diseño limpio y simple que facilite el reconocimiento de la interfaz de nuestra página web de manera rápida.
