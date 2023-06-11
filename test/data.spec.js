@@ -99,7 +99,7 @@ describe("filteringType", () => {
     expect(filteringType(data,"electric")).toEqual(pokemonElectric);
   });
      
-});
+}); 
 
 describe("calculation", () => {
   it("calculation es una función", () => {

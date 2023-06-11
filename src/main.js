@@ -7,8 +7,7 @@ import {  ordeningCp, ordeningNum, filteringName, filteringType, calculation } f
 import data from "./data/pokemon/pokemon.js";
 
 // crear constantes cuerpo, contenedor e input de busqueda
-
-const body = document.querySelector("body");
+const body = document.querySelector("body"); // mal empleado
 const containerCard = document.querySelector(".containerCard");
 const buscar = document.getElementById("buscar");
 
@@ -38,10 +37,9 @@ startButton.addEventListener("click", () => {
 //------------------------------------ impresion de cards + paginación
 
 
-
 function card(i, poke, hide = null) {
   const hideInitial = hide === "hide" ? ' style="display:none;" ' : "";
-
+  // esconde similar a ""
   const out = ` 
     <div ${hideInitial} class="card-pokemon"> 
       <button pos="${i}" class="card">  
@@ -62,7 +60,14 @@ function card(i, poke, hide = null) {
   return out;
 }
 
-
+// ------------------------------------ iconos de tipo de pokemon
+function getTypePokemon(types) {
+  let img = "";
+  types.forEach(function (type) {
+    img += `<img src="./img/${type}.png" alt="${type}" widht="30px" height="30px" loading="lazy">`;
+  });
+  return img;
+}
 // crear pagina (ejecucion)
 // change(1,data,containerCard,body)
 // change(1,data,containerCard,body)
@@ -71,13 +76,15 @@ let elemIni = 0;
 let elemLast = maxElemPerPage - 1;
 const len = data.pokemon.length;
 let page_num = 1;
-
+ 
+//llamado al dom
 const page = document.getElementById("page");
 const btn_next = document.getElementById("btn_next");
 const btn_prev = document.getElementById("btn_prev");
 
 paginationInit(data, elemLast, page_num, page, containerCard, body);
 
+// click al boton next
 btn_next.addEventListener("click", () => {
   [elemIni, elemLast, page_num] = next(
     maxElemPerPage,
@@ -88,7 +95,7 @@ btn_next.addEventListener("click", () => {
     len
   );
 });
-
+// click al boton prev
 btn_prev.addEventListener("click", () => {
   [elemIni, elemLast, page_num] = prev(
     maxElemPerPage,
@@ -98,6 +105,7 @@ btn_prev.addEventListener("click", () => {
     page
   );
 });
+
 // crear pagina (funcion)
 function paginationInit(data, elemLast, page_num, page, containerCard, body) {
   let out = "";
@@ -155,7 +163,7 @@ function prev(maxElemPerPage, elemIni, elemLast, page_num, page) {
 
 // ------------------------------------ interaccion input busqueda
 
-
+// escucha lo ingresado en el input buscar y activa la función
 buscar.addEventListener("input", function () {
   const val = buscar.value;
 
@@ -225,7 +233,7 @@ buttonType.addEventListener("click", (e) => {
       // filtrado
       const pokemonFilter = filteringType(data.pokemon, pokeType);
       pokemonFilter.forEach((e_poke, idx_poke) => {
-        // e_poke.type (es el arregle de tipos de pokemon en el objeto con 251)
+        // e_poke.type (es el arreglo de tipos de pokemon en el objeto con 251)
         //.includes    (si está incluido)
         // pokeType    (el tipo en el atributo del boton)
         out += card(idx_poke, e_poke);
@@ -346,11 +354,3 @@ function cardDetails(poke) {
   return out;
 }
 
-// ------------------------------------ iconos de tipo de pokemon
-function getTypePokemon(types) {
-  let img = "";
-  types.forEach(function (type) {
-    img += `<img src="./img/${type}.png" alt="${type}" widht="30px" height="30px" loading="lazy">`;
-  });
-  return img;
-}
